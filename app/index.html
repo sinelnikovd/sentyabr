@@ -5,8 +5,6 @@
     <title>Главная страница</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <!--style-->
-    <script>!function(){function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))a(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(a(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var c=document.createElement("link");c.href=o,c.rel="stylesheet",c.type="text/css",document.getElementsByTagName("head")[0].appendChild(c),document.cookie="font_css_cache"}}function a(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="_fonts.min.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();</script>
     <noscript>
       <link rel="stylesheet" href="_header.min.css">
       <link rel="stylesheet" href="_main.min.css">
@@ -27,7 +25,7 @@
             <div class="header-search-form">
               <form action="/">
                 <input type="text" placeholder="ПОИСК" class="search-text">
-                <button type="submit" class="search-icon"></button>
+                <button type="submit" class="search-button search-icon"></button>
               </form>
             </div>
             <div class="header-contact-menu">
@@ -50,9 +48,9 @@
     <div class="main-section-1">
       <div class="container">
         <div class="colums">
-          <div class="main-section-1-col-1"><img src="img/1.png" alt="Экспресс - доставка"><span>Экспресс - доставка</span></div>
-          <div class="main-section-1-col-2"><img src="img/1.png" alt="Экспресс - доставка"><span>Примерка на дому</span></div>
-          <div class="main-section-1-col-3"><img src="img/1.png" alt="Экспресс - доставка"><span>Оплата при доставке</span></div>
+          <div class="main-section-1-col-1"><img src="img/car.png" alt="Экспресс - доставка"><span>Экспресс - доставка</span></div>
+          <div class="main-section-1-col-2"><img src="img/vesh.png" alt="Экспресс - доставка"><span>Примерка на дому</span></div>
+          <div class="main-section-1-col-3"><img src="img/money.png" alt="Экспресс - доставка"><span>Оплата при доставке</span></div>
         </div>
       </div>
     </div>
@@ -61,17 +59,15 @@
         <div class="colums">
           <div class="main-section-2-col-left">
             <div class="logo-parent">
-              <div class="logo"><img src="img/1.png" alt=""></div>
-              <div class="subtitle">
-                <p>онлайн-шоурум казахстанских дизайнеров</p>
-              </div>
+              <div class="logo"><img src="img/logo.png" alt=""></div>
+              <p class="subtitle">онлайн-шоурум казахстанских дизайнеров</p>
             </div>
             <div class="menu">
               <ul class="main-menu">
                 <li><a href="#">новое</a></li>
                 <li><a href="#">женщины</a></li>
                 <li><a href="#">мужчины</a></li>
-                <li><a href="#">дизайнеры</a>
+                <li class="active"><a href="#">дизайнеры</a>
                   <ul>
                     <li><a href="#">Aika Alemi</a></li>
                     <li><a href="#">Alima </a></li>
@@ -79,8 +75,7 @@
                     <li><a href="#">Tolegen</a></li>
                     <li><a href="#">Pentatonica</a></li>
                     <li><a href="#">Salta</a></li>
-                    <li><a href="#">смотреть все</a></li>
-                  </ul>
+                  </ul><a href="#" class="view-all">смотреть все</a>
                 </li>
                 <li><a href="#">outlet</a></li>
               </ul>
@@ -89,15 +84,12 @@
           <div class="main-section-2-col-right">
             <div class="carousel main-section-2-carousel">
               <div class="items-carousel">
-                <div class="item-carousel"><img src="img/1.png" alt=""></div>
-                <div class="item-carousel"><img src="img/1.png" alt=""></div>
-                <div class="item-carousel"><img src="img/1.png" alt=""></div>
-                <div class="item-carousel"><img src="img/1.png" alt=""></div>
+                <div class="item-carousel"><img src="img/top-baner1.jpg" alt=""></div>
+                <div class="item-carousel"><img src="" alt=""></div>
+                <div class="item-carousel"><img src="" alt=""></div>
+                <div class="item-carousel"><img src="" alt=""></div>
               </div>
-              <div class="nav-carousel">
-                <div class="nav-carousel-left"></div>
-                <div class="nav-carousel-right"></div>
-              </div>
+              <div class="nav-carousel"><span class="nav-carousel-left"></span><span class="nav-carousel-right"></span></div>
             </div>
           </div>
         </div>
@@ -108,9 +100,9 @@
         <div class="colums">
           <div class="main-section-3-col-left">
             <div class="image"><a href="#">
-                <h3>Заголовок в две строки</h3>
-                <p>Подзаголовок текст текст текст текст </p><span>описание</span></a></div>
-            <div class="round-image"><img src="#" alt=""></div>
+                <h3>Заголовок в две <br>строки</h3>
+                <p>Подзаголовок текст текст <br>текст текст </p><span>описание</span></a></div>
+            <div class="round-image"><img src="img/roundimg.png" alt=""></div>
           </div>
           <div class="main-section-3-col-right">
             <div class="top-image"><a href="#">
@@ -118,10 +110,10 @@
             <div class="carousel boottom-carousel">
               <div class="nav-carousel-left"></div>
               <div class="items-carousel">
-                <div class="item-carousel"><a href="#"><img src="img/1.png" alt=""><span class="button-main">смотреть</span></a></div>
-                <div class="item-carousel"><a href="#"><img src="img/1.png" alt=""><span class="button-main">смотреть</span></a></div>
-                <div class="item-carousel"><a href="#"><img src="img/1.png" alt=""><span class="button-main">смотреть</span></a></div>
-                <div class="item-carousel"><a href="#"><img src="img/1.png" alt=""><span class="button-main">смотреть</span></a></div>
+                <div class="item-carousel"><a href="#"><img src="" alt=""><span class="button-main">смотреть</span></a></div>
+                <div class="item-carousel"><a href="#"><img src="" alt=""><span class="button-main">смотреть</span></a></div>
+                <div class="item-carousel"><a href="#"><img src="" alt=""><span class="button-main">смотреть</span></a></div>
+                <div class="item-carousel"><a href="#"><img src="" alt=""><span class="button-main">смотреть</span></a></div>
               </div>
               <div class="nav-carousel-right"></div>
             </div>

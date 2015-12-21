@@ -11,7 +11,7 @@ block content
 					.header-search-form
 						form(action="/")
 							input(type="text" placeholder="ПОИСК").search-text
-							button(type="submit").search-icon
+							button(type="submit").search-button.search-icon
 					.header-contact-menu
 						ul
 							li
@@ -35,13 +35,13 @@ block content
 		.container
 			.colums
 				.main-section-1-col-1
-					img(src="img/1.png", alt="Экспресс - доставка")
+					img(src="img/car.png", alt="Экспресс - доставка")
 					span Экспресс - доставка
 				.main-section-1-col-2
-					img(src="img/1.png", alt="Экспресс - доставка")
+					img(src="img/vesh.png", alt="Экспресс - доставка")
 					span Примерка на дому
 				.main-section-1-col-3
-					img(src="img/1.png", alt="Экспресс - доставка")
+					img(src="img/money.png", alt="Экспресс - доставка")
 					span Оплата при доставке
 
 	.main-section-2
@@ -50,9 +50,8 @@ block content
 				.main-section-2-col-left
 					.logo-parent
 						.logo
-							img(src="img/1.png", alt="")
-						.subtitle
-							p онлайн-шоурум казахстанских дизайнеров
+							img(src="img/logo.png", alt="")
+						p.subtitle онлайн-шоурум казахстанских дизайнеров
 					.menu
 						ul.main-menu
 							li
@@ -61,7 +60,7 @@ block content
 								a(href="#") женщины
 							li
 								a(href="#") мужчины
-							li
+							li.active
 								a(href="#") дизайнеры
 								ul
 									li
@@ -76,8 +75,7 @@ block content
 										a(href="#") Pentatonica
 									li
 										a(href="#") Salta
-									li
-										a(href="#") смотреть все
+								a(href="#").view-all смотреть все
 							li
 								a(href="#") outlet
 
@@ -85,27 +83,27 @@ block content
 					.carousel.main-section-2-carousel
 						.items-carousel
 							.item-carousel
-								img(src="img/1.png", alt="")
+								img(src="img/top-baner1.jpg", alt="")
 							.item-carousel
-								img(src="img/1.png", alt="")
+								img(src="", alt="")
 							.item-carousel
-								img(src="img/1.png", alt="")
+								img(src="", alt="")
 							.item-carousel
-								img(src="img/1.png", alt="")
+								img(src="", alt="")
 						.nav-carousel
-							.nav-carousel-left
-							.nav-carousel-right
+							span.nav-carousel-left
+							span.nav-carousel-right
 	.main-section-3
 		.container
 			.colums
 				.main-section-3-col-left
 					.image
 						a(href="#")
-							h3 Заголовок в две строки
-							p Подзаголовок текст текст текст текст 
+							h3 Заголовок в две <br>строки
+							p Подзаголовок текст текст <br>текст текст 
 							span описание
 					.round-image
-						img(src="#", alt="")
+						img(src="img/roundimg.png", alt="")
 				.main-section-3-col-right
 					.top-image
 						a(href="#")
@@ -116,19 +114,19 @@ block content
 						.items-carousel
 							.item-carousel
 								a(href="#")
-									img(src="img/1.png", alt="")
+									img(src="", alt="")
 									span.button-main смотреть
 							.item-carousel
 								a(href="#")
-									img(src="img/1.png", alt="")
+									img(src="", alt="")
 									span.button-main смотреть
 							.item-carousel
 								a(href="#")
-									img(src="img/1.png", alt="")
+									img(src="", alt="")
 									span.button-main смотреть
 							.item-carousel
 								a(href="#")
-									img(src="img/1.png", alt="")
+									img(src="", alt="")
 									span.button-main смотреть
 						.nav-carousel-right
 	.main-section-4
@@ -226,10 +224,3 @@ block content
 								i.icon-mail 
 				.footer-col-3
 					p (c) sentyabr.kz все права защищены
-
-
-
-
-
-
-

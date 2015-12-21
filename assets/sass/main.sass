@@ -1,35 +1,41 @@
 @import "bourbon"
 @import "_normalize.sass"
 @import "_vars.sass"
+@import "fonts.sass"
 @import "libs/owl.carousel.sass"
 
 *::-webkit-input-placeholder
-	color: #424242
+	color: #fff
 	opacity: 1
 
 
 *:-moz-placeholder
-	color: #424242
+	color: #fff
 	opacity: 1
 
 *::-moz-placeholder
-	color: #424242
+	color: #fff
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #424242
+	color: #fff
 	opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #424242
+	color: #fff
 
 body input:required:valid,
 body textarea:required:valid
-	color: #424242
+	color: #fff
+
+*
+	margin: 0
+	padding: 0
 
 body
-	font-size: 15px
+	font-family: "CirceRegular", $helvetica
+	font-size: 14px
 	min-width: 320px
 	position: relative
 	line-height: 1.6
@@ -55,16 +61,21 @@ body
 	@extend .text
 	background-color: #000
 	border: 1px solid #585858
-	padding: 5px
+	padding: 11px 5px 10px
 	box-sizing: border-box
 	height: 20px
-	font-size: 15px
+	font-family: "FuturaFuturisRegular", $helvetica
+	font-weight: normal
+	font-size: 9.5px
+	color: #fff
+
 
 .colums
 	+clearfix
 .col
 	float: left
 	position: relative
+	box-sizing: border-box
 
 /* HEADeR */
 
@@ -74,6 +85,11 @@ header
 	.search-text
 		width: 116px
 		margin-left: 2px
+	.search-button
+		position: absolute
+		right: 0
+		top: 50%
+		+transform(translateY(-50%))
 .header-col-left
 	@extend .col
 	width: 75%
@@ -81,10 +97,28 @@ header
 	@extend .col
 	width: 25%
 
-.header-search-form,.header-contact-menu
+.header-search-form
+	position: relative
+
+.header-search-form
 	display: inline-block
+	vertical-align: top
+	margin-top: 16px
+.header-contact-menu
+	display: inline-block
+	vertical-align: middle
+	margin-top: 15px
+	a
+		font-family: "FuturaFuturisRegular", $helvetica
+		font-weight: normal
+		font-size: 10px
+		text-decoration: none
+		text-transform: uppercase
+		color: #fff
+
 .header-menu
 	list-style: none
+	margin-top: 15px
 	li
 		float: left
 		padding: 0 5px
@@ -94,6 +128,8 @@ header
 		&:nth-child(2)
 			border-left: 0;
 
+
+
 /* EnD HEADeR */
 
 /* main-section-1 */
@@ -101,7 +137,16 @@ header
 	.main-section-1-col-1,.main-section-1-col-2,.main-section-1-col-3
 		@extend .col
 		width: 33.333333%
-		padding: 50px 0
+		padding: 32px 0 27px
+		text-align: center
+		padding-left: 10px
+		min-height: 105px
+		span
+			vertical-align: middle
+			font-size: 13px
+		img
+			vertical-align: middle
+			margin-right: 5%
 
 
 /* EnD main-section-1*/ 
@@ -110,22 +155,95 @@ header
 .main-section-2
 	.main-section-2-col-left
 		@extend .col
-		width: 30%
-	.main-section-2-col-right
-		@extend .col
-		width: 70%
-/* EnD main-section-2*/
-
-/* main-section-2 */
-.main-section-2
-	min-height: 500px
-	.main-section-2-col-left
-		@extend .col
 		width: 20.3%
 	.main-section-2-col-right
 		@extend .col
 		width: 79.7%
+
+.logo-parent
+	margin-top: 25px
+	position: relative
+	left: 73px
+	z-index: 2
+.logo
+	line-height: 0
+.subtitle
+	line-height: 1
+	font-size: 11px
+	white-space: nowrap
+	letter-spacing: 1.5px
+.menu
+	margin-top: 60px
+
+.main-menu
+	list-style: none
+	li
+		position: relative
+		a
+			font-family: "FuturaDemi", $helvetica
+			font-weight: normal
+			font-size: 42px
+			text-decoration: none
+			line-height: .5
+			color: #1f1f1f
+		ul
+			display: none
+			margin-top: 8px
+			padding-left: 14px
+			list-style: none
+			margin-bottom: 10px
+			li
+				line-height: 1
+				a
+					font-family: "CirceRegular", $helvetica
+					font-weight: normal
+					font-size: 14px
+					line-height: 1.3
+					color: #1f1f1f
+		.view-all
+			font-family: "CirceBold", $helvetica
+			font-weight: normal
+			font-size: 14px
+			line-height: 1.3
+			border-bottom: 2px solid #1f1f1f
+		&.active
+			margin: 23px 0 50px
+			ul
+				display: block
+
 /* EnD main-section-2*/
+
+/* main-section-3 */
+.main-section-3
+	.main-section-3-col-left,.main-section-3-col-right
+		@extend .col
+		width: 50%
+	.main-section-3-col-left
+		padding: 137px 10%
+	.image
+		background-image: url("img/vertbanner.jpg")
+		background-repeat: no-repeat
+		height: 453px
+		text-align: center
+		a
+			display: block
+			padding-top: 190px
+			width: 100%
+			height: 100%
+			box-sizing: border-box
+			color: #fff
+			text-decoration: none
+			h3
+				font-family: "CirceRegular", $helvetica
+				font-weight: normal
+				font-size: 18px
+				text-transform: uppercase
+				line-height: 1.1
+				letter-spacing: 1.5px
+			p
+				margin-top: 15px
+				font-size: 12px
+/* EnD main-section-3*/
 
 
 
