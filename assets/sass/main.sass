@@ -1,0 +1,108 @@
+@import "bourbon"
+@import "_normalize.sass"
+@import "_vars.sass"
+
+*::-webkit-input-placeholder
+	color: #424242
+	opacity: 1
+
+
+*:-moz-placeholder
+	color: #424242
+	opacity: 1
+
+*::-moz-placeholder
+	color: #424242
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #424242
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #424242
+
+body input:required:valid,
+body textarea:required:valid
+	color: #424242
+
+body
+	font-size: 15px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	font-family: sans-serif
+	font-weight: normal
+	overflow-x: hidden
+	color: #000
+	position: relative
+
+.container
+	max-width: 1100px
+	margin: 0 auto
+	padding: 0 15px
+	box-sizing: border-box
+
+
+.text
+	max-width: 320px
+	width: 100%
+	border: 0
+
+.search-text
+	@extend .text
+	background-color: #000
+	border: 1px solid #585858
+	padding: 5px
+	box-sizing: border-box
+	height: 20px
+	font-size: 15px
+
+.colums
+	+clearfix
+.col
+	float: left
+	position: relative
+
+/* HEADeR */
+
+header
+	background-color: #000
+	height: 52px
+	.search-text
+		width: 116px
+		margin-left: 2px
+.header-col-left
+	@extend .col
+	width: 75%
+.header-col-right
+	@extend .col
+	width: 25%
+
+.header-search-form,.header-contact-menu
+	display: inline-block
+.header-menu
+	list-style: none
+	li
+		float: left
+		padding: 0 5px
+		border-left: 1px solid #fff 
+		&:first-child
+			border-left: 0;
+		&:nth-child(2)
+			border-left: 0;
+
+/* EnD HEADeR */
+
+/* main-section-1 */
+.main-section-1
+	.main-section-1-col-1,.main-section-1-col-2,.main-section-1-col-3
+		@extend .col
+		width: 33.333333%
+		padding: 50px 0
+
+/* EnD main-section-1*/ 
+
+//ALWAYS END
+@import "_media.sass"

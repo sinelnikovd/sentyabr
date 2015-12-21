@@ -1,0 +1,638 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fl",
+				"fl:l	float:left"
+			],
+			[
+				"ma",
+				"maw	max-width"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"inarra",
+				"in_array"
+			],
+			[
+				"va",
+				"va:t	vertical-align:top"
+			],
+			[
+				"fad",
+				"fadeIn"
+			],
+			[
+				"che",
+				"checked"
+			],
+			[
+				"tt",
+				"tt:l	text-transform:lowercase"
+			],
+			[
+				"slide",
+				"slideDown"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"d",
+				"d:n	display:none"
+			],
+			[
+				"bgz",
+				"bgz:cv	background-size:cover"
+			],
+			[
+				"ls",
+				"lisi	list-style-image"
+			],
+			[
+				"cu",
+				"cur	cursor"
+			],
+			[
+				"li",
+				"lisi	list-style-image"
+			],
+			[
+				"p",
+				"pl	padding-left"
+			],
+			[
+				"cl",
+				"cl:b	clear:both"
+			],
+			[
+				"l",
+				"lh	line-height"
+			],
+			[
+				"td",
+				"td:u	text-decoration:underline"
+			],
+			[
+				"owl",
+				"owl.carousel.min.js"
+			],
+			[
+				"pos",
+				"pos:f	position:fixed"
+			],
+			[
+				"lo",
+				"logo"
+			],
+			[
+				"po",
+				"pos	position"
+			],
+			[
+				"bg",
+				"bgp	background-position"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"h",
+				"h:a	height:auto"
+			],
+			[
+				"border",
+				"border-box"
+			],
+			[
+				"let",
+				"left"
+			],
+			[
+				"transt",
+				"translateX"
+			],
+			[
+				"m",
+				"m	margin"
+			],
+			[
+				"b",
+				"banners.jpg	w:94 h:76"
+			],
+			[
+				"in",
+				"input_val"
+			],
+			[
+				"s",
+				"static/"
+			],
+			[
+				"bsh",
+				"bxsh	box-shadow"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
+				"fw",
+				"fw:n	font-weight:normal"
+			],
+			[
+				"box-s",
+				"box-shadow"
+			],
+			[
+				"st",
+				"style.main.css"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 390.0,
+		"last_filter": "gulp",
+		"selected_items":
+		[
+			[
+				"gulp",
+				"Gulp"
+			],
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"commi",
+				"Git: Commit"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"View: Toggle Menu"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/sinelnikov/Project/sentyabr/page_proofs"
+	],
+	"file_history":
+	[
+		"/home/sinelnikov/Project/sentyabr/assets/jade/template/template.jade",
+		"/home/sinelnikov/Project/sentyabr/assets/jade/index.jade",
+		"/home/sinelnikov/Project/sentyabr/assets/sass/main.sass",
+		"/home/sinelnikov/Project/sentyabr/.gitignore",
+		"/home/sinelnikov/Project/rsf123/sass/main.sass",
+		"/home/sinelnikov/Project/sentyabr/.git/config",
+		"/home/sinelnikov/.config/sublime-text-3/Packages/Git/Git.sublime-settings",
+		"/home/sinelnikov/.config/sublime-text-3/Packages/User/Git.sublime-settings",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/assets/jade/index.jade",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/assets/sass/main.sass",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/gulpfile.js",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/assets/jade/template/template.jade",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/app/libs/bootstrap/bootstrap.min.css",
+		"/home/sinelnikov/Project/rsfcorp20151218/footer.php",
+		"/home/sinelnikov/Project/rsf123/jade/template/header-top.jade",
+		"/home/sinelnikov/Project/rsf123/jade/template/template.jade",
+		"/home/sinelnikov/Project/mat1/mat1/static/scss/modules.scss",
+		"/home/sinelnikov/Project/mat1/optim/static.css",
+		"/home/sinelnikov/Project/mat1/mat1/search-result.html",
+		"/home/sinelnikov/Project/mat1/mat1/catalog5.html",
+		"/home/sinelnikov/Project/mat1/mat1/catalog2.html",
+		"/home/sinelnikov/Project/mat1/mat1/sizes.html",
+		"/home/sinelnikov/Project/mat1/mat1/no-standart-order.html",
+		"/home/sinelnikov/Project/mat1/mat1/guarantee.html",
+		"/home/sinelnikov/Project/mat1/mat1/dostavka.html",
+		"/home/sinelnikov/Project/mat1/mat1/contacts.html",
+		"/home/sinelnikov/Project/mat1/mat1/catalog4.html",
+		"/home/sinelnikov/Project/mat1/mat1/catalog3.html",
+		"/home/sinelnikov/Project/mat1/mat1/catalog.html",
+		"/home/sinelnikov/Project/mat1/mat1/index.html",
+		"/home/sinelnikov/Project/mat1/mat1/actions.html",
+		"/home/sinelnikov/Project/mat1/mat1/action.html",
+		"/home/sinelnikov/Project/mat1/mat1/about.html",
+		"/home/sinelnikov/Project/mat1/optim/static1.css",
+		"/home/sinelnikov/Project/mat1/mat1/static/scss/static.css",
+		"/home/sinelnikov/Project/mat1/optim/unused.css",
+		"/home/sinelnikov/Project/mat1/optim/static2.css",
+		"/home/sinelnikov/Project/archive/wprsf/footer.php",
+		"/home/sinelnikov/Project/mat1/optim/static.min.css",
+		"/home/sinelnikov/Project/mat1/mat1/.htaccess",
+		"/home/sinelnikov/Project/mat1/optim/.htaccess",
+		"/home/sinelnikov/Project/rsf123/jade/index.jade",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/assets/jade/template/index.html",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/assets/sass/_normalize.sass",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/assets/sass/_media.sass",
+		"/home/sinelnikov/Project/sentyabr/page-proofs/assets/sass/_vars.sass",
+		"/home/sinelnikov/Project/archive/wprsf/page-chastichnyj-autsorsing-buxgalterskix-uslug.php",
+		"/home/sinelnikov/Project/archive/wprsf/page-vedenie-buxgalterii-ip.php",
+		"/home/sinelnikov/Project/archive/wprsf/page-vedenie-buxgalterii-ooo.php",
+		"/home/sinelnikov/Project/archive/wprsf/page-vedenie-buxgalterskoj-otchetnosti.php",
+		"/home/sinelnikov/Project/archive/wprsf/page-buxgalterskie-konsultacii.php",
+		"/home/sinelnikov/Project/archive/wprsf/page-vedenie-buxgalterskogo-ucheta-ip-ili-ooo.php",
+		"/home/sinelnikov/Project/archive/wprsf/page-vedenie-buxgalterskogo-ucheta-v-kreditnyx-organizaciyax.php",
+		"/home/sinelnikov/Project/archive/wprsf/style.css",
+		"/home/sinelnikov/Project/archive/wprsf/page-uslugi-buxgalterskogo-ucheta-organizaciyam.php",
+		"/home/sinelnikov/Project/archive/wprsf/page-buxgalterskoe-obsluzhivanie-firm.php",
+		"/home/sinelnikov/Project/archive/rsf04.12.15.v1.2noadp/app/autsors.html",
+		"/home/sinelnikov/Project/archive/wprsf/functions.php",
+		"/home/sinelnikov/Project/archive/wprsf/.htaccess",
+		"/home/sinelnikov/Project/archive/wprsf/robots.txt",
+		"/home/sinelnikov/Project/archive/wprsf/js/common.js",
+		"/home/sinelnikov/Project/archive/wprsf/page-error403.php",
+		"/home/sinelnikov/Project/rsf123/app/consult.html",
+		"/home/sinelnikov/Project/rsf123/jade/template/figures-items-parrent.jade",
+		"/home/sinelnikov/Project/rsf123/jade/template/figures-items.jade",
+		"/home/sinelnikov/Project/rsf123/sass/_media.sass",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/js/common.js",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/footer.php",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/widgets/questionWidget.php",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/page-home-page.php",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/header.php",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/widgets/advantagesWidget.php",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/question.php",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/widgets/my_widget.php",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/style.css",
+		"/home/sinelnikov/Project/wprsf/www/wp-content/themes/rsf/header_top.php",
+		"/home/sinelnikov/.cache/.fr-y4rRPP/rsf/header.php",
+		"/home/sinelnikov/.cache/.fr-ECxKpu/js/input.mask.js",
+		"/home/sinelnikov/.cache/.fr-Y7I5c2/js/common.js",
+		"/home/sinelnikov/Project/rsf123/app/libs/jquery/jquery-1.11.2.min.js",
+		"/home/sinelnikov/Project/rsf123/jade/contact.jade",
+		"/home/sinelnikov/Project/rsf123/jade/audit.jade",
+		"/home/sinelnikov/Project/rsf123/app/contact.html",
+		"/home/sinelnikov/Project/rsf123/app/_main.min.css",
+		"/home/sinelnikov/Project/rsf123/jade/calc.jade",
+		"/home/sinelnikov/Project/rsf123/jade/company.jade",
+		"/home/sinelnikov/Project/rsf123/jade/autsors.jade",
+		"/home/sinelnikov/Project/rsf123/jade/consult.jade",
+		"/home/sinelnikov/Project/rsf123/jade/uslugi.jade",
+		"/home/sinelnikov/Project/rsf123/jade/index.html",
+		"/home/sinelnikov/Project/rsf123/jade/template/section-last.jade",
+		"/home/sinelnikov/Project/rsf123/sass/_tooltipster.sass",
+		"/home/sinelnikov/Project/rsf123/jade/template/client-items.jade",
+		"/home/sinelnikov/Project/rsf123/jade/template/client-and-comment.jade",
+		"/home/sinelnikov/Project/rsf123/sass/_irs.sass",
+		"/home/sinelnikov/Project/rsf123/jade/template/section-offer.jade",
+		"/home/sinelnikov/Project/rsf123/jade/template/question.jade",
+		"/home/sinelnikov/Project/rsf123/app/uslugi.html",
+		"/home/sinelnikov/Project/rsf123/app/index.html",
+		"/home/sinelnikov/Project/rsf123/app/company.html",
+		"/home/sinelnikov/Project/rsf123/app/calc.html",
+		"/home/sinelnikov/Project/rsf123/app/autsors.html",
+		"/home/sinelnikov/Project/rsf123/app/audit.html",
+		"/home/sinelnikov/Project/rsf123/sass/fonts.sass",
+		"/home/sinelnikov/Project/rsf123/jade/template/footer.jade",
+		"/home/sinelnikov/Project/rsf123/app/js/common.js",
+		"/home/sinelnikov/Project/archive/rsf04.12.15/jade/index.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/uslugi.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/consult.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/autsors.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/question.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/index.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/calc.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/client-and-comment.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/client-items.jade",
+		"/home/sinelnikov/Project/RSF/verstka/sass/main.sass",
+		"/home/sinelnikov/Project/RSF/verstka/sass/_vars.sass",
+		"/home/sinelnikov/Project/RSF/verstka/jade/audit.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/company.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/contact.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/section-offer.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/section-tizer-items.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/header-top.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/advantages.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/footer.jade",
+		"/home/sinelnikov/Project/RSF/verstka/jade/template/autsors.jade",
+		"/home/sinelnikov/Project/RSF/verstka/sass/fonts.sass",
+		"/home/sinelnikov/Project/RSF/verstka/app/js/common.js"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/sinelnikov/Project/mat1/mat1",
+			"<!--<link href=\"static/js/plugins/owl.carousel.css\" rel=\"stylesheet\" type=\"text/css\">-->",
+			"/home/sinelnikov/Project/mat1/mat1",
+			"/home/sinelnikov/Project/mat1/mat1/static",
+			"/home/sinelnikov/Project/mat1/mat1/static/scss",
+			"/home/sinelnikov/Project/mat1/mat1/static",
+			"/home/sinelnikov/Project/mat/static/scss"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"row",
+			"popup",
+			"form-wrapper",
+			"popup",
+			"pagination",
+			"pagenation",
+			"id=\"filter-modal-form-content",
+			"#filter-modal-form-content",
+			"filter-modal-form-content",
+			"#filter-modal-form-content",
+			"#(.*)\\{",
+			"#filter-section",
+			"id=\"filter-section",
+			"filter-section",
+			"#(.*)\\{",
+			"category-section",
+			"#category-section",
+			"#(.*)\\{",
+			"#(.*){",
+			"#",
+			"pagenation",
+			"pagination",
+			"#accordion",
+			"#accordion .panel-title-toggle .glyphicon",
+			"chevron",
+			".bootstrap-select.btn-group .btn .caret",
+			"#filter-section .form-control, #filter-modal-form-content .form-control",
+			"bootstrap-select",
+			"#filter-modal-form-content .form-group-2 .input-group",
+			"description-body-full",
+			"description-body",
+			"dropdown-menu ",
+			"<link href=\"static/js/plugins/owl.carousel.css\" rel=\"stylesheet\" type=\"text/css\">",
+			"UNUSED",
+			"UNUSED(.*),",
+			"UNUSED\\.(.*),",
+			"UNUSED.(.*),",
+			"UNUSED",
+			"page",
+			"pagen",
+			"page",
+			"pagenateon",
+			"pagenation",
+			"footer",
+			"f2f2f2",
+			"}",
+			"{",
+			";",
+			".modal",
+			"filter-modal-form",
+			".modal",
+			".pagenation",
+			".pagenation ul",
+			".section-going-audit",
+			"audit-header",
+			"section-free-audit-offer",
+			"lab",
+			"figures",
+			"webkit",
+			"filter",
+			"add_theme_support",
+			"block-1",
+			"email-form",
+			"calc",
+			"head-services",
+			"#map",
+			"#ohrana",
+			".client-comment",
+			"client",
+			".figures-item",
+			"figures-items-parrent",
+			".consultations-header",
+			".section-result-audit",
+			".contact",
+			"footer",
+			"media",
+			".text",
+			".section-saving",
+			".section-business-card",
+			".section-free-question",
+			"section-services-bc",
+			"section-business-card",
+			".section-going-audit",
+			"calc-email",
+			"section-calc-text",
+			".button-calc",
+			".section-calc-text",
+			"section-calc-3",
+			"/\\*.*\\*/",
+			";",
+			"{",
+			"}",
+			"import",
+			"punkt",
+			"client-name",
+			".client-item",
+			".client-items",
+			".client-item",
+			"punkt",
+			";",
+			"{",
+			"}",
+			"calc",
+			".section-offer",
+			".section-free-audit",
+			".section-offer",
+			".menu",
+			"menu",
+			"form-group",
+			"header-item",
+			".block-",
+			".business-card",
+			" .business-card",
+			"<a href=\"https://twitter.com/matras_ru\" target=\"_blank\"></a>",
+			"<img src=\"static/img/content/facebook-ico.jpg\" title=\"Facebook\" alt=\"Facebook\" data-pin-nopin=\"true\">",
+			"<img src=\"static/img/content/vk-icon.jpg\" title=\"VK\" alt=\"VK\" data-pin-nopin=\"true\">",
+			"<img src=\"static/img/content/twitter-icon.png\" title=\"twitter\" alt=\"twitter\" data-pin-nopin=\"true\">",
+			".social",
+			".section-last",
+			".header-item",
+			".block-1",
+			".figures-item",
+			".section-business-card",
+			"section-free-question",
+			"contact-midell",
+			"<input type=\"text\" class=\"form-control\"  pattern=\"\\[0­9\\]\\*\" name=\"coast-.*\" placeholder=\".*\" />",
+			"<input type=\"text\" class=\"form-control\"  pattern=\"\\[0­9\\]\\*\" name=\"coast-from\" placeholder=\".*\" />",
+			"<input type=\"text\" class=\"form-control\"  pattern=\"\\[0­9\\]\\*\" name=\"coast-from\" placeholder=\"(.)*\" />"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".filter-modal-form-content",
+			"<!--<link href=\"static/js/plugins/owl.carousel.css\" rel=\"stylesheet\" type=\"text/css\">-->",
+			"",
+			"424242",
+			"",
+			"<i class=\"socicon socicon-f\"></i>",
+			"<i class=\"socicon socicon-v\"></i>",
+			"<i class=\"socicon socicon-t\"></i>",
+			"img",
+			"+box-sizing(border-box)"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 88.0
+	},
+	"output.gulp_output":
+	{
+		"height": 215.0
+	},
+	"pinned_build_system": "",
+	"project": "sentyabr.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 148.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
