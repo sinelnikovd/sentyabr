@@ -1,6 +1,7 @@
 @import "bourbon"
 @import "_normalize.sass"
 @import "_vars.sass"
+@import "libs/owl.carousel.sass"
 
 *::-webkit-input-placeholder
 	color: #424242
@@ -102,7 +103,31 @@ header
 		width: 33.333333%
 		padding: 50px 0
 
+
 /* EnD main-section-1*/ 
+
+/* main-section-2 */
+.main-section-2
+	.main-section-2-col-left
+		@extend .col
+		width: 30%
+	.main-section-2-col-right
+		@extend .col
+		width: 70%
+/* EnD main-section-2*/
+
+/* main-section-2 */
+.main-section-2
+	min-height: 500px
+	.main-section-2-col-left
+		@extend .col
+		width: 20.3%
+	.main-section-2-col-right
+		@extend .col
+		width: 79.7%
+/* EnD main-section-2*/
+
+
 
 //ALWAYS END
 @import "_media.sass"
