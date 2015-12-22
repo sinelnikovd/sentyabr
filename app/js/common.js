@@ -55,11 +55,11 @@ $(document).ready(function() {
 	})
 
 	$('.product .carousel .nav-carousel-prev').click(function() {
-		owlpr.trigger('prev.owl.carousel');
+		$(this).closest('.product .carousel').find('.items-carousel').trigger('prev.owl.carousel');
 	})
 
 	$('.product .carousel .nav-carousel-next').click(function() {
-		owlpr.trigger('next.owl.carousel');
+		$(this).closest('.product .carousel').find('.items-carousel').trigger('next.owl.carousel');
 	})
 
 	if($('div').is(".location-lang"))

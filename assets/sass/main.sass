@@ -89,6 +89,15 @@ body
 	position: relative
 	box-sizing: border-box
 
+/* TeNGE */
+
+.tenge
+	font-family: "Tenge"
+	font-weight: normal
+	font-style: normal
+
+/* EnD TeNGE*/
+
 
 /* SeLECT */
 .cSelect
@@ -122,8 +131,11 @@ body
 			text-align: center
 		&>label
 			border: 1px solid #e1e1e1
-	&>.optWrapper>.options>li label
-		font-size: 12px
+	&>.optWrapper
+		border-radius: 0
+		&>.options>li label
+			font-size: 12px
+
 
 /* EnD SeLECT*/
 
@@ -703,9 +715,11 @@ button.mfp-close
 	.nav-carousel-prev
 		@extend .center-nav
 		left: 5px
+		font-size: 15px
 	.nav-carousel-next
 		@extend .center-nav
 		right: 5px
+		font-size: 15px
 	.sizes
 		@extend .center-nav
 		left: 50%
@@ -715,15 +729,16 @@ button.mfp-close
 		font-size: 24px
 		display: none
 	&:hover
-		.preview:after
-			content: ''
-			position: absolute
-			z-index: 2
-			top: 0
-			left: 0
-			right: 0
-			bottom: 0
-			background-color: rgba(0,0,0,.05)
+		.item-carousel
+			a:after
+				content: ''
+				position: absolute
+				z-index: 2
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				background-color: rgba(0,0,0,.05)
 		.sizes
 			display: block
 	.preview
@@ -732,16 +747,20 @@ button.mfp-close
 		.item-carousel
 			height: 340px
 			text-align: center
-			padding: 10px
-			box-sizing: border-box
+			a
+				padding: 10px
+				box-sizing: border-box
+				display: block
 			img
 				height: 100%
 				width: auto
 				margin: 0 auto
-	&>a
-		display: block
 	.description
 		margin-top: 26px
+		a
+			display: block
+			text-decoration: none
+			color: #000
 		h3
 			font-size: 18px
 			font-weight: normal
