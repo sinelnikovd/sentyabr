@@ -3,6 +3,8 @@
 @import "_vars.sass"
 @import "fonts.sass"
 @import "libs/owl.carousel.sass"
+@import "libs/magnific-popup.sass"
+@import "libs/sumoselect.sass"
 
 *::-webkit-input-placeholder
 	color: #fff
@@ -32,6 +34,12 @@ body textarea:required:valid
 *
 	margin: 0
 	padding: 0
+
+button
+	cursor: pointer
+
+:focus
+	outline: 0
 
 
 body
@@ -80,6 +88,47 @@ body
 	float: left
 	position: relative
 	box-sizing: border-box
+
+
+/* SeLECT */
+.cSelect
+	width: 100%
+	height: 100%
+	cursor: pointer
+.customSelect
+	font: 12px sans-serif
+	background-color: #fff 
+	background-image: url(http://i48.tinypic.com/2u7rpec.png)
+	background-position: right center
+	background-repeat: no-repeat
+	border: 1px solid #ddd
+	color: #555
+	padding: 7px 9px
+	-moz-border-radius: 2px
+	-webkit-border-radius: 2px
+	border-radius: 2px 2px
+	width: 140px
+	text-align: left
+
+.SumoSelect 
+	&>.CaptionCont
+		border-radius: 0
+		border-color: #e1e1e1
+		&>span.placeholder, &>span
+			color: #000
+			font-style: normal
+			font-family: "CirceRegular", $helvetica
+			font-size: 12px
+			text-align: center
+		&>label
+			border: 1px solid #e1e1e1
+	&>.optWrapper>.options>li label
+		font-size: 12px
+
+/* EnD SeLECT*/
+
+
+/* MaIN */
 
 /* HEADeR */
 
@@ -210,7 +259,7 @@ header
 			font-weight: normal
 			font-size: 42px
 			text-decoration: none
-			line-height: .5
+			line-height: .6
 			color: #1f1f1f
 		ul
 			display: none
@@ -232,9 +281,14 @@ header
 			line-height: 1.3
 			border-bottom: 2px solid #1f1f1f
 		&.active
-			margin: 23px 0 50px
+			margin-bottom: 28px
+			&>a
+				color: #40c2f3
 			ul
 				display: block
+				li
+					a
+						color: #1f1f1f
 
 /* EnD main-section-2*/
 
@@ -495,7 +549,7 @@ header
 	width: 45%
 footer
 	background-color: #000
-	margin-top: 150px
+	margin-top: 50px
 	padding: 1px 0 20px
 	.footer-menu
 		list-style: none
@@ -525,6 +579,184 @@ footer
 	margin-top: 5px
 	letter-spacing: 0.5px
 /* EnD FoOTER */
+
+/* PoPUP*/
+.location-lang
+	max-width: 395px
+	margin: 0 auto
+	background-color: #444
+	position: relative
+	padding: 105px 20px 25px
+	text-align: right
+	p
+		font-family: "FuturaDemi", $helvetica
+		font-weight: normal
+		font-size: 42px
+		text-transform: lowercase
+		color: #fff
+		line-height: .7
+		text-align: center
+	.input-group1
+		margin-top: 45px
+		margin-bottom: 45px
+		text-align: center
+		.select-country,.select-city
+			display: inline-block
+			margin-top: 20px
+			width: 160px
+			margin: 0 10px
+	.input-group2
+		margin-top: 10px
+		margin-bottom: 45px
+		text-align: center
+		.select-lang
+			display: inline-block
+			margin-top: 20px
+	.button-save
+		background-color: #fff
+		border: 0
+		width: 195px
+		padding: 20px 0
+		font-family: "FuturaFuturisRegular", $helvetica
+		font-weight: bold
+		font-size: 14px
+		text-transform: uppercase
+		&:hover
+			background-color: #000
+			color: #fff
+
+button.mfp-close
+	border: 1px solid #fff
+	top: 5px
+	right: 5px
+	font-size: 40px
+
+.mfp-close-btn-in .mfp-close
+	color: #fff
+
+
+/* EnD PoPUP*/
+
+/* EnD MaIN */
+
+/* CaTALOG */
+
+.catalog-section-1-col-left
+	@extend .col
+	width: 20.3%
+	.logo-parent
+		margin-top: 46px
+	.menu
+		margin-top: 42px
+.catalog-section-1-col-right
+	@extend .col
+	width: 79.7%
+.catalog-banner-header
+	width: 100%
+	height: 442px
+	background-image: url("img/bennercatalog.jpg")
+	background-repeat: no-repeat
+	background-size: cover
+
+.catalog-section-options
+	padding: 92px 0 52px
+	
+	.category + .SlectBox
+		width: 300px
+	.price + .SlectBox,
+	.color + .SlectBox,
+	.size + .SlectBox,
+	.design + .SlectBox
+		width: 135px
+
+	.SumoSelect 
+		margin-left: 31px
+		&:first-child
+			margin-left: 0
+
+
+.catalog-section-products
+	text-align: center
+	h2
+		@extend .bold
+		font-size: 18px
+		border-bottom: 2px solid #000
+		display: inline-block
+/* EnD CaTALOG */
+
+/* PrODUCT */
+.products
+	margin-top: 40px
+	font-size: 0
+.center-nav
+	position: absolute
+	top: 50%
+	+transform(translateY(-50%))
+	z-index: 3
+.product
+	vertical-align: top
+	display: inline-block
+	width: 33.333333%
+	padding-left: 10px
+	box-sizing: border-box
+	margin-bottom: 20px
+	.nav-carousel-prev
+		@extend .center-nav
+		left: 5px
+	.nav-carousel-next
+		@extend .center-nav
+		right: 5px
+	.sizes
+		@extend .center-nav
+		left: 50%
+		+transform(translateX(-50%))
+		font-family: "FuturaDemi", $helvetica
+		font-weight: normal
+		font-size: 24px
+		display: none
+	&:hover
+		.preview:after
+			content: ''
+			position: absolute
+			z-index: 2
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-color: rgba(0,0,0,.05)
+		.sizes
+			display: block
+	.preview
+		position: relative
+		text-align: center
+		.item-carousel
+			height: 340px
+			text-align: center
+			padding: 10px
+			box-sizing: border-box
+			img
+				height: 100%
+				width: auto
+				margin: 0 auto
+	&>a
+		display: block
+	.description
+		margin-top: 26px
+		h3
+			font-size: 18px
+			font-weight: normal
+			text-transform: uppercase
+			line-height: 1.2
+		p
+			font-size: 12px
+			letter-spacing: 1px
+			margin-top: 5px
+			line-height: 1.2
+		.price
+			margin-top: 20px
+
+/* EnD PrODUCT */
+
 
 //ALWAYS END
 @import "_media.sass"

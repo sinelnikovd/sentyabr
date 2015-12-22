@@ -48,6 +48,33 @@ $(document).ready(function() {
 	})
 
 
+	var owlpr = $('.product .carousel .items-carousel').owlCarousel({
+		loop:true,
+		nav:false,
+		items: 1
+	})
+
+	$('.product .carousel .nav-carousel-prev').click(function() {
+		owlpr.trigger('prev.owl.carousel');
+	})
+
+	$('.product .carousel .nav-carousel-next').click(function() {
+		owlpr.trigger('next.owl.carousel');
+	})
+
+	if($('div').is(".location-lang"))
+		$.magnificPopup.open({
+			items: {
+			src: '.location-lang',
+			type: 'inline'
+			}
+		});
+
+	//$('.cSelect').customSelect();
+
+	$('.sumoselect').SumoSelect({placeholder: 'Выберите категорию'});
+
+
 
 
 

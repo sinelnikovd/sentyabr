@@ -1,0 +1,249 @@
+extends ./template/template.jade
+
+block title
+	title Главная страница
+
+block content
+	include ./template/header.jade
+	.catalog-section-1
+		.container
+			.colums
+				.catalog-section-1-col-left
+					.logo-parent
+						.logo
+							img(src="img/logo.png", alt="")
+					.menu
+						ul.main-menu
+							li
+								a(href="#") новое
+							li.active
+								a(href="#") женщины
+								ul
+									li
+										a(href="#") Aika Alemi
+									li
+										a(href="#") Alima 
+									li
+										a(href="#") Khan Kuchum
+									li
+										a(href="#") Tolegen
+									li
+										a(href="#") Pentatonica
+									li
+										a(href="#") Salta
+							li
+								a(href="#") мужчины
+							li
+								a(href="#") дизайнеры
+							li
+								a(href="#") outlet
+				.catalog-section-1-col-right
+					.catalog-banner-header
+	.catalog-section-options
+		.container
+			form
+				select(name="category"  multiple="multiple").category.sumoselect
+					option Без рукавов
+					option Футболки
+					option Джемперы
+					option Пуловеры
+				select(name="price").price.sumoselect
+					option цена
+					option 100
+					option 200
+					option 300
+				select(name="color").color.sumoselect
+					option цвет
+					option голубой
+					option желтый
+					option синий
+				select(name="size").size.sumoselect
+					option размер
+					option голубой
+					option желтый
+					option синий
+				select(name="design").design.sumoselect
+					option дизайнер
+					option голубой
+					option желтый
+					option синий
+	.catalog-section-products
+		.container
+			h2 футболки
+			.products
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 khan kuchum
+						p Пальто из кашемира с аппликацией
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 ai by aidana<br> kozhageldina
+						p Пальто из кашемира с аппликацией <br>из ситепона с открытой спиной
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 khan kuchum
+						p Пальто из кашемира с аппликацией
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 khan kuchum
+						p Пальто из кашемира с аппликацией
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 ai by aidana<br> kozhageldina
+						p Пальто из кашемира с аппликацией <br>из ситепона с открытой спиной
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 khan kuchum
+						p Пальто из кашемира с аппликацией
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 khan kuchum
+						p Пальто из кашемира с аппликацией
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 ai by aidana<br> kozhageldina
+						p Пальто из кашемира с аппликацией <br>из ситепона с открытой спиной
+						p.price 134,000 
+							i.tenge n
+				.product
+					.preview.carousel
+						span.nav-carousel-prev <
+						.items-carousel
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+							.item-carousel
+								img(src="img/shmot.png", alt="")
+						span.sizes 34, 36, 38, 42
+						span.nav-carousel-next >
+					.description
+						h3 khan kuchum
+						p Пальто из кашемира с аппликацией
+						p.price 134,000 
+							i.tenge n
+
+	include ./template/footer.jade
+
+
+					

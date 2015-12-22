@@ -4,33 +4,7 @@ block title
 	title Главная страница
 
 block content
-	header
-		.container
-			.colums
-				.header-col-left
-					.header-search-form
-						form(action="/")
-							input(type="text" placeholder="ПОИСК").search-text
-							button(type="submit").search-button.search-icon
-					.header-contact-menu
-						ul
-							li
-								a(href="#")
-									i.icon.icon-contact
-									| Свяжитесь с нами
-				.header-col-right
-					ul.header-menu
-						li
-							a(href="#")
-								i.icon.icon-favorites
-						li
-							a(href="#")
-								i.icon.icon-cart
-								| жанель сыдыкова
-						li
-							a(href="#") астана 
-						li
-							a(href="#") ru
+	include ./template/header.jade
 	.main-section-1
 		.container
 			.colums
@@ -48,37 +22,7 @@ block content
 		.container
 			.colums
 				.main-section-2-col-left
-					.logo-parent
-						.logo
-							img(src="img/logo.png", alt="")
-						p.subtitle онлайн-шоурум казахстанских дизайнеров
-					.menu
-						ul.main-menu
-							li
-								a(href="#") новое
-							li
-								a(href="#") женщины
-							li
-								a(href="#") мужчины
-							li.active
-								a(href="#") дизайнеры
-								ul
-									li
-										a(href="#") Aika Alemi
-									li
-										a(href="#") Alima 
-									li
-										a(href="#") Khan Kuchum
-									li
-										a(href="#") Tolegen
-									li
-										a(href="#") Pentatonica
-									li
-										a(href="#") Salta
-								a(href="#").view-all смотреть все
-							li
-								a(href="#") outlet
-
+					include ./template/logo-menu.jade
 				.main-section-2-col-right
 					.carousel.main-section-2-carousel
 						.items-carousel
@@ -202,27 +146,35 @@ block content
 					p крупнейший онлайн-магазин модной одежды, обуви и аксессуаров в Казахстане.
 					p В ассортименте каталога вы найдете более
 					p 2 000 000 товаров, в том числе спортивную экипировку и косметику брендов с мировым именем. В нашей коллекции — свыше 1000 марок, 500 из подлинности.
-	footer
-		.container
-			.colums
-				.footer-col-1
-					ul.footer-menu
-						li
-							a(href="#") о нас 
-						li
-							a(href="#") контакты
-						li
-							a(href="#") помощь 
-				.footer-col-2
-					ul.social-menu
-						li
-							a(href="#") 
-								i.icon-instagram
-						li
-							a(href="#") 
-								i.icon-facebook
-						li
-							a(href="#")
-								i.icon-mail 
-				.footer-col-3
-					p.copyright (c) sentyabr.kz все права защищены
+	include ./template/footer.jade
+block popup
+	.location-lang
+		form(action="/")
+			p выбрать страну и город
+			.input-group1
+				.select-country
+					select.country.cSelect
+						option страна
+						option Англия
+						option Северная Ирландия
+						option Шотландия
+						option Уэльс		
+				.select-city
+					select.city.cSelect
+						option город
+						option Англия
+						option Северная Ирландия
+						option Шотландия
+						option Уэльс
+			p выбрать язык:
+			.input-group2
+				.select-lang
+					select.lang.cSelect
+						option язык
+						option Англия
+						option Северная Ирландия
+						option Шотландия
+						option Уэльс
+			button(type="submit").button-save Сохранить 
+
+				
