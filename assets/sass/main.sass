@@ -33,6 +33,7 @@ body textarea:required:valid
 	margin: 0
 	padding: 0
 
+
 body
 	font-family: "CirceRegular", $helvetica
 	font-size: 14px
@@ -68,7 +69,7 @@ body
 	box-sizing: border-box
 	height: 20px
 	font-family: "FuturaFuturisRegular", $helvetica
-	font-weight: normal
+	font-weight: bold
 	font-size: 9.5px
 	color: #fff
 
@@ -113,7 +114,7 @@ header
 	margin-top: 15px
 	a
 		font-family: "FuturaFuturisRegular", $helvetica
-		font-weight: normal
+		font-weight: bold
 		font-size: 10px
 		text-decoration: none
 		text-transform: uppercase
@@ -121,15 +122,24 @@ header
 
 .header-menu
 	list-style: none
-	margin-top: 15px
+	margin-top: 20px
 	li
 		float: left
 		padding: 0 5px
 		border-left: 1px solid #fff 
+		line-height: 1
 		&:first-child
 			border-left: 0;
 		&:nth-child(2)
 			border-left: 0;
+		a
+			font-family: "FuturaFuturisRegular", $helvetica
+			font-weight: bold
+			font-size: 10px
+			text-decoration: none
+			text-transform: uppercase
+			color: #fff
+			line-height: 1
 
 
 
@@ -137,13 +147,16 @@ header
 
 /* main-section-1 */
 .main-section-1
+	.colums
+		font-size: 0
 	.main-section-1-col-1,.main-section-1-col-2,.main-section-1-col-3
-		@extend .col
-		width: 33.333333%
-		padding: 32px 0 27px
+		display: inline-block
+		width: 33.33333%
+		padding: 30px 0 28px 10px
 		text-align: center
-		padding-left: 10px
-		min-height: 105px
+		min-height: 95px
+		font-size: 14px
+		box-sizing: border-box
 		span
 			vertical-align: middle
 			font-size: 13px
@@ -162,6 +175,16 @@ header
 	.main-section-2-col-right
 		@extend .col
 		width: 79.7%
+	.main-section-2-carousel
+		position: relative
+	.nav-carousel
+		position: absolute
+		bottom: 0
+		left: 50%
+		z-index: 2
+		.nav-carousel-prev,.nav-carousel-next
+			cursor: pointer
+
 
 .logo-parent
 	margin-top: 25px
@@ -220,10 +243,10 @@ header
 	@extend .col
 	width: 50%
 .main-section-3-col-left
-	padding: 137px 10%
+	padding: 145px 10% 0
 	text-align: center
 .main-section-3-col-right
-	padding: 56px 3.5%
+	padding: 65px 3.5% 0
 .main-section-3
 	.image
 		background-image: url("img/vertbanner.jpg")
@@ -282,13 +305,226 @@ header
 			margin-top: 70px
 			border-bottom: 2px solid #fff
 			display: inline-block
-
-
-
-
+.boottom-carousel
+	margin-top: 50px
+	.items-carousel
+		display: block
+		float: left
+		width: 80%
+		.item-carousel
+			text-align: center
+			height: 320px
+			position: relative
+			img
+				width: auto
+				height: 100%
+				display: inline-block
+			a
+				display: block
+				text-align: center
+			.button-main
+				position: absolute
+				bottom: 20px
+				left: 50%
+				+transform(translateX(-50%))
+				background-color: #000
+				display: inline-block
+				color: #fff
+				width: 180px
+				padding: 15px 0
+				text-transform: uppercase
+				font-family: "FuturaFuturisRegular", $helvetica
+				font-weight: normal
+				font-size: 14px
+	.nav-carousel-prev,.nav-carousel-next
+		float: left
+		width: 10%
 /* EnD main-section-3*/
 
+/* main-section-4 */
+.main-section-4
+	margin-top: 33px
+	.main-section-4-col-left
+		@extend .col
+		width: 68.9%
+	.main-section-4-col-right
+		@extend .col
+		width: 31.1%
+		line-height: 1
+		img
+			width: 100%
+			height: auto
+.main-section-4-carousel
+	position: relative
+	.nav-carousel-prev
+		position: absolute
+		left: 0
+		top: 50%
+		z-index: 2
+	.nav-carousel-next
+		position: absolute
+		right: 0
+		top: 50%
+		z-index: 2
+	.item-carousel
+		background-image: url("img/benner2.jpg")
+		background-repeat: no-repeat
+		background-size: cover
+		height: 407px
+		a
+			display: block
+			text-decoration: none
+			color: #fff
+			text-align: center
+			padding-top: 170px
+		h3
+			color: #fff
+			font-size: 17px
+			text-transform: uppercase
+			line-height: 1.2
+		p
+			font-size: 11px
+			font-weight: bold
+			margin-top: 10px
+		span
+			@extend .bold
+			display: inline-block
+			margin-top: 100px
+			font-size: 13px
+			border-bottom: 2px solid #fff
+.makeupstudio
+	display: block
+	width: 100%
+	height: 100%
+/* EnD main-section-4 */
 
+/* main-section-5 */
+.main-section-5
+	.slash
+		height: 50px
+		padding: 41px
+	.main-section-5-col-1,.main-section-5-col-2,.main-section-5-col-3,.main-section-5-col-4
+		@extend .col
+		width: 25%
+		text-align: center
+	.main-section-5-col-1
+		padding-top: 5px
+		line-height: 1
+		h2
+			font-family: "FuturaDemi", $helvetica
+			font-weight: normal
+			font-size: 42px
+			line-height: .8
+			text-transform: lowercase
+		p
+			font-size: 20px
+			line-height: 1
+			text-transform: lowercase
+			margin-top: 11px
+	.buttom-all
+		display: inline-block
+		background-color: #000
+		color: #fff
+		width: 160px
+		padding: 23px 0
+		text-transform: uppercase
+		font-family: "FuturaFuturisRegular", $helvetica
+		font-weight: normal
+		font-size: 14px
+		text-decoration: none
+		margin-top: 127px
+	.image
+		height: 350px
+		background-repeat: no-repeat
+		background-size: cover
+		a
+			display: block
+			width: 100%
+			height: 100%
+			text-decoration: none
+			line-height: 1
+			box-sizing: border-box
+			padding-top: 300px
+			&:hover
+				background-color: rgba(0,0,0,.3)
+		span
+			text-transform: uppercase
+			font-family: "FuturaFuturisRegular", $helvetica
+			font-weight: normal
+			font-size: 16px
+			color: #fff
+			line-height: 1
+
+	.image1
+		background-image: url("img/shmo1.jpg")
+	.image2
+		background-image: url("img/shmo2.jpg")
+	.image3
+		background-image: url("img/shmo3.jpg")
+/* EnD main-section-5 */
+
+/* main-section-6 */
+.main-section-6-col-1,.main-section-6-col-2,.main-section-6-col-3
+	@extend .col
+	width: 33.3333333333%
+	text-align: center
+	box-sizing: border-box
+	padding: 90px 15px 0
+	h4
+		text-transform: uppercase
+		font-size: 18px
+		font-weight: normal
+		letter-spacing: 1px
+		margin-top: 35px
+		line-height: 1.45
+		margin-bottom: 30px
+	p
+		font-size: 12px
+		color: #5e5e5e
+		line-height: 1.45
+/* EnD main-section-6 */
+
+/* FoOTER */
+.footer-col-1,.footer-col-2,.footer-col-3
+	@extend .col
+.footer-col-1
+	width: 45%
+.footer-col-2
+	width: 10%
+.footer-col-3
+	width: 45%
+footer
+	background-color: #000
+	margin-top: 150px
+	padding: 1px 0 20px
+	.footer-menu
+		list-style: none
+		li
+			display: inline-block
+			padding: 0 42px
+			&:first-child
+				padding-left: 0
+			a
+				font-family: "FuturaFuturisRegular", $helvetica
+				font-weight: bold
+				font-size: 10px
+				text-transform: uppercase
+				text-decoration: none
+				color: #fff
+	.social-menu
+		list-style: none
+		li
+			display: inline-block
+.copyright
+	font-family: "FuturaFuturisRegular", $helvetica
+	font-weight: bold
+	font-size: 10px
+	color: #fff
+	text-align: right
+	text-transform: uppercase
+	margin-top: 5px
+	letter-spacing: 0.5px
+/* EnD FoOTER */
 
 //ALWAYS END
 @import "_media.sass"
