@@ -73,7 +73,7 @@ body
 	@extend .text
 	background-color: #000
 	border: 1px solid #585858
-	padding: 11px 5px 10px
+	padding: 11px 20px 10px 5px
 	box-sizing: border-box
 	height: 20px
 	font-family: "FuturaFuturisRegular", $helvetica
@@ -98,6 +98,48 @@ body
 
 /* EnD TeNGE*/
 
+/* IcONFONT */
+
+.icon
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'IconFont';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-transform: lowercase
+
+.icon-favorites:before
+	content: 'a'
+.icon-contact:before
+	content: 'b'
+.icon-cart:before
+	content: 'c'
+.icon-search:before
+	content: 'd'
+.icon-e:before
+	content: 'e'
+.icon-f:before
+	content: 'f'
+.icon-g:before
+	content: 'g'
+.icon-h:before
+	content: 'h'
+.icon-i:before
+	content: 'i'
+.icon-j:before
+	content: 'j'
+.icon-k:before
+	content: 'k'
+.icon-l:before
+	content: 'l'
+
+
+
+/* EnD IcONFONT */
 
 /* SeLECT */
 .cSelect
@@ -153,8 +195,14 @@ header
 	.search-button
 		position: absolute
 		right: 0
-		top: 50%
-		+transform(translateY(-50%))
+		top: 0
+		background-color: transparent
+		border: 0
+		outline: 0
+		color: #fff
+		font-size: 14px
+		padding-top: 3px
+		padding-right: 5px
 .header-col-left
 	@extend .col
 	width: 75%
@@ -173,6 +221,7 @@ header
 	display: inline-block
 	vertical-align: middle
 	margin-top: 15px
+	margin-left: 20px
 	a
 		font-family: "FuturaFuturisRegular", $helvetica
 		font-weight: bold
@@ -180,10 +229,15 @@ header
 		text-decoration: none
 		text-transform: uppercase
 		color: #fff
+	.icon-contact
+		top: 5px
+		font-size: 20px
+		margin-right: 10px
+
 
 .header-menu
 	list-style: none
-	margin-top: 20px
+	margin-top: 17px
 	li
 		float: left
 		padding: 0 5px
@@ -201,6 +255,12 @@ header
 			text-transform: uppercase
 			color: #fff
 			line-height: 1
+		.icon-favorites
+			top: 0
+			font-size: 20px
+		.icon-cart
+			top: 0
+			font-size: 25px
 
 
 
