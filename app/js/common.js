@@ -68,7 +68,7 @@ $(document).ready(function() {
 			src: '.location-lang',
 			type: 'inline'
 			},
-			closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="icon icon-close"></i></button>'
+			closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>'
 		});
 
 	//$('.cSelect').customSelect();
