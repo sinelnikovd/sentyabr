@@ -1,0 +1,114 @@
+extends ./template/template.jade
+
+block title
+	title Продукт
+
+block content
+	include ./template/header.jade
+	.product-section-1
+		.container
+			.colums
+				.product-section-1-col-1
+					.logo-parent
+						.logo
+							img(src="img/logo.png", alt="")
+					.menu
+						ul.main-menu
+							li
+								a(href="#") новое
+							li
+								a(href="#") женщины
+							li
+								a(href="#") мужчины
+							li
+								a(href="#") дизайнеры
+							li
+								a(href="#") outlet
+					.miniauter
+						ul
+							li
+								a(href="#")
+									img(src="img/mini1.jpg", alt="")
+							li
+								a(href="#")
+									img(src="img/mini2.jpg", alt="")
+							li
+								a(href="#")
+									img(src="img/mini3.jpg", alt="")
+							li
+								a(href="#")
+									img(src="img/mini4.jpg", alt="")
+				.product-section-1-col-2
+					img(src="img/product.jpg", alt="")
+				.product-section-1-col-3
+					h1 ai by aidana <br>kozhageldina
+					p Пальто из кашемира с аппликацией из ситепона с открытой спиной
+					p.price 134,000
+						i.tenge n
+					form
+						.input-group
+							select(name="size").size.sumoselect
+								option размер
+								option голубой
+								option желтый
+								option синий
+						a(href="#").link-size 
+							span Таблица размеров/ 
+							| Подобрать размер
+						.input-group
+							select(name="color").color.sumoselect
+								option цвет
+								option голубой
+								option голубой
+								option синий
+						.input-group-button
+							.input-group-button-1
+								button(type="submit").button.button-black Купить
+							.input-group-button-2
+								button(type="submit").button.button-gray Хотеть
+					ul.social
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-facebook
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-twitter
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-twitter
+	.product-section-2
+		.container
+			.product-section-2-middle
+				ul.hexcode
+					li
+						a(href="#") #белый
+					li
+						a(href="#") #пальто
+					li
+						a(href="#") #всявбелом
+					li
+						a(href="#") #пуговицывдваряда 
+					li
+						a(href="#") #модельвтеплесентябрьдоволен
+					li
+						a(href="#") #почтихлое
+				h2 описание
+				p Jil Sander's white coat exemplifies the label's clean, contemporary approach to tailoring. This crisp double-breasted style is cut from structured wool-gabardine lined in a smooth silk-blend for added warmth. Wear it over turtleneck sweaters and smart pants.
+				h2 о дизайнере
+				p Jil Sander's white coat exemplifies the label's clean, contemporary approach to tailoring. This crisp double-breasted style is cut from structured wool-gabardine lined in a smooth silk-blend for added warmth. Wear it over turtleneck sweaters and smart pants.
+			.products-block1
+				h2 что носить с этим изделием
+				.products.products-4
+					include ./template/product.jade
+					include ./template/product.jade
+					include ./template/product.jade
+					include ./template/product.jade
+			.products-block2
+				h2 еще от этого дизанера
+				.products
+					include ./template/product.jade
+					include ./template/product.jade
+					include ./template/product.jade
+
+
+	include ./template/footer.jade

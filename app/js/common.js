@@ -71,7 +71,7 @@ $(document).ready(function() {
 			closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>'
 		});
 
-	//$('.cSelect').customSelect();
+	$('.cSelect').SumoSelect();
 
 	$('.sumoselect').SumoSelect({placeholder: 'Выберите категорию'});
 
