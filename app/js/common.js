@@ -67,7 +67,8 @@ $(document).ready(function() {
 			items: {
 			src: '.location-lang',
 			type: 'inline'
-			}
+			},
+			closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="icon icon-close"></i></button>'
 		});
 
 	//$('.cSelect').customSelect();
@@ -81,16 +82,16 @@ $(document).ready(function() {
 
 	//SVG Fallback
 if (!Modernizr.svg) {
-  // wrap this in a closure to not expose any conflicts
-  (function() {
-    // grab all images. getElementsByTagName works with IE5.5 and up
-    var imgs = document.getElementsByTagName('img'),endsWithDotSvg = /.*\.svg$/,i = 0,l = imgs.length;
-    // quick for loop
-    for(; i < l; ++i) {
-      if(imgs[i].src.match(endsWithDotSvg)) {
-        // replace the png suffix with the svg one
-        imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
-      }
-    }
-  })();
+	// wrap this in a closure to not expose any conflicts
+	(function() {
+		// grab all images. getElementsByTagName works with IE5.5 and up
+		var imgs = document.getElementsByTagName('img'),endsWithDotSvg = /.*\.svg$/,i = 0,l = imgs.length;
+		// quick for loop
+		for(; i < l; ++i) {
+			if(imgs[i].src.match(endsWithDotSvg)) {
+				// replace the png suffix with the svg one
+				imgs[i].src = imgs[i].src.slice(0, -3) + 'png';
+			}
+		}
+	})();
 }

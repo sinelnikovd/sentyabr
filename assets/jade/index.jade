@@ -34,8 +34,10 @@ block content
 							.item-carousel
 								img(src="img/top-baner1.jpg", alt="")
 						.nav-carousel
-							span.nav-carousel-prev <
-							span.nav-carousel-next >
+							span.nav-carousel-prev 
+								i.icon.icon-prev
+							span.nav-carousel-next 
+								i.icon.icon-next
 	.main-section-3
 		.container
 			.colums
@@ -53,7 +55,11 @@ block content
 							h3 khan kuchum <br>spring/summer 2016
 							span смотреть лукбук
 					.carousel.boottom-carousel
-						span.nav-carousel-prev <
+						.nav-carousel
+							span.nav-carousel-prev
+								i.icon.icon-prev
+							span.nav-carousel-next
+								i.icon.icon-next
 						.items-carousel
 							.item-carousel
 								a(href="#")
@@ -71,14 +77,14 @@ block content
 								a(href="#")
 									img(src="img/shmot.png", alt="")
 									span.button-main смотреть
-						span.nav-carousel-next >
-						
+
 	.main-section-4
 		.container
 			.colums
 				.main-section-4-col-left
 					.carousel.main-section-4-carousel
-						span.nav-carousel-prev <
+						span.nav-carousel-prev 
+							i.icon.icon-prev
 						.items-carousel
 							.item-carousel
 								a(href="#")
@@ -100,7 +106,8 @@ block content
 										h3 гардероб <br>звезды инстаграма	<br>@lalala
 										p О подарках, подписчиках и любимых фильтрах 
 										span описание
-						span.nav-carousel-next >
+						span.nav-carousel-next
+							i.icon.icon-next
 				.main-section-4-col-right
 					a(href="#").makeupstudio
 						img(src="img/makeup.jpg", alt="")
@@ -174,6 +181,4 @@ block popup
 						option Северная Ирландия
 						option Шотландия
 						option Уэльс
-			button(type="submit").button-save Сохранить 
-
-				
+			button(type="submit").button-save Сохранить

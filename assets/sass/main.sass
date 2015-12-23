@@ -42,8 +42,6 @@ button
 	outline: 0
 
 
-
-
 body
 	font-family: "CirceRegular", $helvetica
 	font-size: 14px
@@ -127,19 +125,19 @@ body
 	content: 'd'
 .icon-e:before
 	content: 'e'
-.icon-f:before
+.icon-prev:before
 	content: 'f'
-.icon-g:before
+.icon-next:before
 	content: 'g'
-.icon-h:before
+.icon-facebook:before
 	content: 'h'
 .icon-i:before
 	content: 'i'
 .icon-j:before
 	content: 'j'
-.icon-k:before
+.icon-instagram:before
 	content: 'k'
-.icon-l:before
+.icon-close:before
 	content: 'l'
 
 
@@ -210,10 +208,10 @@ header
 		padding-right: 5px
 .header-col-left
 	@extend .col
-	width: 75%
+	width: 50%
 .header-col-right
 	@extend .col
-	width: 25%
+	width: 50%
 
 .header-search-form
 	position: relative
@@ -411,6 +409,11 @@ header
 		z-index: 2
 		.nav-carousel-prev,.nav-carousel-next
 			cursor: pointer
+			font-size: 30px
+			opacity: .5
+			color: #000
+			&:hover
+				opacity: .8
 
 
 .logo-parent
@@ -539,10 +542,12 @@ header
 			display: inline-block
 .boottom-carousel
 	margin-top: 50px
+	padding: 0 50px
+	width: 100%
+	box-sizing: border-box
 	.items-carousel
 		display: block
-		float: left
-		width: 80%
+		width: 100%
 		.item-carousel
 			text-align: center
 			height: 320px
@@ -568,9 +573,26 @@ header
 				font-family: "FuturaFuturisRegular", $helvetica
 				font-weight: normal
 				font-size: 14px
+	.nav-carousel
+		width: 100%
+		position: relative
+		top: 150px
 	.nav-carousel-prev,.nav-carousel-next
-		float: left
-		width: 10%
+		position: absolute
+		font-size: 20px
+		top: 50%
+		+transform(translateY(-50%))
+		z-index: 2
+		cursor: pointer
+		color: #000
+		opacity: .7
+		&:hover
+			opacity: 1
+	.nav-carousel-prev
+		left: 0
+	.nav-carousel-next
+		right: 0
+
 /* EnD main-section-3*/
 
 /* main-section-4 */
@@ -588,16 +610,20 @@ header
 			height: auto
 .main-section-4-carousel
 	position: relative
+	.nav-carousel-prev,.nav-carousel-next
+		position: absolute
+		top: 50%
+		z-index: 2
+		font-size: 32px
+		color: #fff
+		opacity: .7
+		cursor: pointer
+		&:hover
+			opacity: 1
 	.nav-carousel-prev
-		position: absolute
-		left: 0
-		top: 50%
-		z-index: 2
+		left: 20px
 	.nav-carousel-next
-		position: absolute
-		right: 0
-		top: 50%
-		z-index: 2
+		right: 20px
 	.item-carousel
 		background-image: url("img/benner2.jpg")
 		background-repeat: no-repeat
@@ -804,10 +830,13 @@ footer
 			color: #fff
 
 button.mfp-close
-	border: 1px solid #fff
-	top: 5px
-	right: 5px
-	font-size: 40px
+	top: 3px
+	right: 3px
+	font-size: 50px
+	width: 50px
+	height: 50px
+	i
+		top: 0
 
 .mfp-close-btn-in .mfp-close
 	color: #fff
