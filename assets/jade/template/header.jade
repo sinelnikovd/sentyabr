@@ -8,21 +8,39 @@ header
 						button(type="submit").search-button
 							i.icon.icon-search
 				.header-contact-menu
-					ul
-						li
-							a(href="#")
+					ul.header-contact-menu-ul
+						li.header-contact-menu-li
+							span
 								i.icon.icon-contact
 								| Свяжитесь с нами
+							ul.header-contact-menu-sub-ul
+								li 1. отправить 
+									a(href="#") e-mail 
+								li 2. позвонить 
+									span
+										a(href="tel:88000505123").blue_text.tel 8 800 0505 123
+								li 3. оставить 
+									a(href="#") отзыв
 			.header-col-right
 				ul.header-menu
-					li
-						a(href="#")
+					li.header-menu-sub-li
+						a(href="#") 
 							i.icon.icon-favorites
-					li
 						a(href="#")
 							i.icon.icon-cart
-					li
-						a(href="#") жанель сыдыкова
+								span 2
+						span жанель сыдыкова
+						ul.header-menu-sub-ul
+							li
+								a(href="#") мой профиль
+							li
+								a(href="#") список желаний
+							li
+								a(href="#") корзина
+							li
+								a(href="#") история покупок
+							li.exit
+								a(href="#") выйти
 					li
 						a(href="#") астана 
 					li
