@@ -1,0 +1,152 @@
+extends ./template/template.jade
+
+block title
+	title Профиль
+
+block content
+	- var reg = true
+	include ./template/header.jade
+	.profile-section-1
+		.container
+			.colums
+				.profile-section-1-col-left
+					.logo-parent
+						.logo
+							img(src="img/logo.png", alt="")
+					.menu
+						ul.main-menu
+							li
+								a(href="#") мой профиль
+							li
+								a(href="#") список желаний
+							li
+								a(href="#") корзина
+							li
+								a(href="#") история покупок
+				.profile-section-1-col-right
+					.to_story
+						a(href="#")
+							i.icon.icon-story
+							| в магазин
+	.profile-section-2
+		.container
+			.colums
+				.profile-section-2-col
+					h2
+						span Мои данные
+					.profile-form
+						p Жанель Сыдыкова
+						p sydykova.z@gmail.com
+						p Astana, kz
+						form
+							.input-group
+								label Новый пароль
+									input(type="password").password-input.profile-text
+							.input-group
+								label Пол
+									.input-select
+										select(name="sex").sex.cSelect
+											option женский
+											option мужской
+											option не определилось
+							.input-group
+								p.label-date Дата рождения
+								.input-date
+									.input-select.select-day
+										select(name="day").day.cSelect
+											- for (var x = 1; x < 31; x++)
+												option= x
+									.input-select.select-month
+										select(name="month").month.cSelect
+											- list = ["Январь", "Февраль", "Март","Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+											each item in list
+												option= item
+									.input-select.select-year
+										select(name="year").year.cSelect
+											- for (var x = 2016; x > 1980; x--)
+												option= x
+							.input-group
+								label Email уведомления
+									input(type="email").profile-text
+							.input-group
+								button.button.button-black я подписан на рассылку
+							.input-group
+								button.button.button-gray отписаться от рассылок
+							.input-group
+								label Телефон
+									input(type="tel").data-inputmask.profile-text
+							.profile-button-parrent
+								button(type="submit").button.button-black.profile-button сохранить
+				.profile-section-2-col
+					h2
+						span Адрес доставки
+					.profile-form
+						form
+							.input-group
+								label Имя
+									input(type="text" name="firstname").profile-text
+							.input-group
+								label Фамилия
+									input(type="text" name="lastname").profile-text
+							.input-group
+								label Адрес 01
+									input(type="text" name="addres01").profile-text
+							.input-group
+								label Адрес 02
+									input(type="text" name="addres02").profile-text
+							.input-group
+								label Город
+									input(type="text" name="city").profile-text
+							.input-group
+								label Страна
+									input(type="text" name="country").profile-text
+							.input-group
+								label Почтовый индекс
+									input(type="text" name="postcode").profile-text
+							.input-group
+								label Телефон
+									input(type="tel" name="phone").data-inputmask.profile-text
+							.input-group
+								.input-radio
+									input(type="radio" name="typedelivery").radiobutton#standartdelivery
+									label(for="standartdelivery") стандартная доставка
+								.input-radio
+									input(type="radio" name="typedelivery").radiobutton#rushdelivery
+									label(for="rushdelivery") срочная доставка
+							.profile-button-parrent
+								button(type="submit").button.button-black.profile-button сохранить
+				.profile-section-2-col
+					h2
+						span Способ оплаты
+					.profile-form
+						form
+							.input-group
+								.input-radio
+									input(type="radio" name="typepayment").radiobutton#cashpayment
+									label(for="cashpayment") оплата наличными при получении товара
+								.input-radio
+									input(type="radio" name="typepayment").radiobutton#cardpayment
+									label(for="cardpayment") оплата картой
+							.profile-button-parrent
+								button(type="submit").button.button-black.profile-button сохранить
+							.input-group.offret
+								.input-radio
+									input(type="radio" name="offret").radiobutton#offret
+									label(for="offret") Я согласен с условиями публичной 
+										a(href="#") оферты*
+	.profile-section-3
+		.container
+				.profile-section-3-col
+					img(src="img/ssl.svg", alt="")
+					p Безопасность платежей гарантируется использованием SSL протокола
+				.profile-section-3-col
+					img(src="img/car.svg", alt="")
+					p Экспресс-Доставка
+				.profile-section-3-col
+					img(src="img/money.svg", alt="")
+					p Примеряйте <br>и оплачивайте только <br>подходящие товары
+				.profile-section-3-col
+					img(src="img/oplata.svg", alt="")
+					p Оплата наличными в момент доставки
+
+	include ./template/footer.jade
