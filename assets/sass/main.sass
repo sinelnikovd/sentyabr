@@ -95,6 +95,23 @@ body
 	position: relative
 	box-sizing: border-box
 
+
+.to_story
+	margin-top: 35px
+	a
+		text-decoration: none
+		color: #40c2f3
+		font-family: "FuturaDemi", $helvetica
+		font-weight: normal
+		font-size: 42px
+		&:hover
+			color: #000
+		.icon
+			margin-right: 5px
+			top: 12px
+			color: #000
+			font-size: 48px
+
 /* TeNGE */
 
 .tenge
@@ -128,7 +145,7 @@ body
 	content: 'c'
 .icon-search:before
 	content: 'd'
-.icon-e:before
+.icon-story:before
 	content: 'e'
 .icon-prev:before
 	content: 'f'
@@ -1287,6 +1304,71 @@ button.mfp-close
 				text-decoration: underline
 
 /* EnD DeSING */
+
+/* HeLP */
+.help-section-1-col-left
+	@extend .col
+	width: 30%
+	.logo-parent
+		margin-top: 45px
+	.menu
+		margin-top: 45px
+.help-section-1-col-right
+	@extend .col
+	width: 70%
+	text-align: right
+
+.help-section-2
+	margin-top: 95px
+	.container
+		font-size: 0
+		background-color: #f5f5f5
+		padding: 50px 0 50px
+.help-section-2-col
+	display: inline-block
+	width: 25%
+	font-size: 14px
+	text-align: center
+	a
+		display: block
+		text-decoration: none
+		color: #000
+		&:hover
+			color: #40c2f3
+	p
+		margin-top: 15px
+
+.help-section-3
+	margin-top: 20px
+	margin-bottom: 80px
+	.container
+		font-size: 0
+		background-color: #f5f5f5
+		padding: 20px 0 80px
+	.help-section-3-col
+		display: inline-block
+		width: 25%
+		font-size: 14px
+		vertical-align: top
+		padding: 0 30px 0 25px
+		box-sizing: border-box
+		.question
+			font-size: 18px
+			line-height: 1.2
+			padding: 25px 0
+			a
+				color: #000
+				&:hover
+					text-decoration: none
+		.answer
+			color: #5e5e5e
+			padding: 12px 0
+			line-height: 1.1
+
+
+
+/* EnD HeLP */
+
 
 
 //ALWAYS END
