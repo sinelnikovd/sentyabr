@@ -23,25 +23,29 @@ header
 									a(href="#") отзыв
 			.header-col-right
 				ul.header-menu
-					li.header-menu-sub-li
-						a(href="#") 
-							i.icon.icon-favorites
-						a(href="#")
-							i.icon.icon-cart
-								span 2
-						span жанель сыдыкова
-						ul.header-menu-sub-ul
-							li
-								a(href="#") мой профиль
-							li
-								a(href="#") список желаний
-							li
-								a(href="#") корзина
-							li
-								a(href="#") история покупок
-							li.exit
-								a(href="#") выйти
-					li
-						a(href="#") астана 
+					if reg
+						li.header-menu-sub-li
+							a(href="#") 
+								i.icon.icon-favorites
+							a(href="#")
+								i.icon.icon-cart
+									span 2
+							span жанель сыдыкова
+							ul.header-menu-sub-ul
+								li
+									a(href="#") мой профиль
+								li
+									a(href="#") список желаний
+								li
+									a(href="#") корзина
+								li
+									a(href="#") история покупок
+								li.exit
+									a(href="#") выйти
+						li
+							a(href="#") астана 
+					else
+						li.header-menu-reg-li
+							a(href="#") регистрация / логин
 					li
 						a(href="#") ru

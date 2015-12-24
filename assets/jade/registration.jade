@@ -1,0 +1,34 @@
+extends ./template/template.jade
+
+block title
+	title Регистрация
+
+block content
+	include ./template/header.jade
+	.registration-section-1
+		.container
+			.logo-parent
+				.logo
+					img(src="img/logo.png", alt="")
+			.registration-form
+				h1 регистрация
+				p
+					a(href="#") Я уже зарегистрирован
+				p
+					a(href="#") Восстановить пароль
+				form
+					label Имя
+						input(type="text").registration-text
+					label Фамилия
+						input(type="text").registration-text
+					label Email
+						input(type="email").registration-text
+					label Пароль
+						input(type="password").registration-text
+					label Повторите пароль
+						input(type="password").registration-text
+					label Страна
+						input(type="text").registration-text
+					.registration-button-parrent
+						button(type="submit").button.registration-button зарегистрироваться
+	include ./template/footer.jade
