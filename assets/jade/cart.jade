@@ -1,0 +1,67 @@
+extends ./template/template.jade
+
+block title
+	title Корзина
+
+block content
+	- var reg = true
+	include ./template/header.jade
+	.cart-section-1
+		.container
+			.colums
+				.cart-section-1-col-left
+					.logo-parent
+						.logo
+							img(src="img/logo.png", alt="")
+					.menu
+						ul.main-menu
+							li
+								a(href="#") мой профиль
+							li
+								a(href="#") список желаний
+							li
+								a(href="#") корзина
+							li
+								a(href="#") история покупок
+				.cart-section-1-col-right
+					.to_story
+						a(href="#")
+							i.icon.icon-story
+							| в магазин
+	.cart-section-2
+		.container
+			.cart-items
+				.cart-item
+					.preview
+						img(src="img/cart.jpg", alt="")
+						span.number №1
+					.description
+						.description-row-1
+							.description-col-1
+								p пальто
+								p.border-top наименование
+							.description-col-2
+								p 34 (XS)
+								p.border-top размер
+							.description-col-3
+								.input-group
+									span.nav-up
+									span.nav-down
+									input(type="number" value="1")
+								p.border-top размер
+						.description-row-2
+							.description-col-1
+								p aidana kozhageldina
+								p.border-top дизайнер
+							.description-col-2
+								p 134,000 
+									i.tenge n
+								p.border-top стоимость продукта
+					.close
+						i.icon.icon-close
+
+	.cart-section-3
+		.container
+			include ./template/footer-icon.jade
+
+	include ./template/footer.jade

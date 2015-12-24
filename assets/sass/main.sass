@@ -1569,9 +1569,85 @@ button.mfp-close
 			color: #494949
 			&:hover
 				text-decoration: none
-
-
 /* EnD PrOFILE */
+
+/* CaRT */
+.cart-section-1-col-left
+	@extend .col
+	width: 30%
+	.logo-parent
+		margin-top: 45px
+	.menu
+		margin-top: 45px
+.cart-section-1-col-right
+	@extend .col
+	width: 70%
+	text-align: right
+
+.cart-item
+	+clearfix
+	position: relative
+	margin: 20px 0
+	background-color: #f5f5f5
+	.preview
+		@extend .col
+		width: 20%
+		border: 1px solid rgba(0,1,1,.12)
+		position: relative
+		background-color: #fff
+		.number
+			position: absolute
+			top: 5px
+			left: 5px
+			font-size: 18px
+			font-weight: normal
+	.close
+		position: absolute
+		top: 5px
+		right: 5px
+		font-size: 40px
+		cursor: pointer
+	.description
+		@extend .col
+		width: 80%
+	.description-row-1
+		font-size: 0
+		padding-top: 50px
+		padding-left: 30px
+		width: 100%
+		box-sizing: border-box
+		.description-col-1,.description-col-2,.description-col-3
+			font-size: 14px
+			display: inline-block
+			margin-left: 30px
+		.description-col-1
+			max-width: 300px
+			width: 40%
+		.description-col-2
+			max-width: 300px
+			width: 20%
+		.description-col-3
+			max-width: 200px
+			width: 40%
+	.description-row-2
+		font-size: 0
+		padding-top: 50px
+		.description-col-1,.description-col-2
+			font-size: 14px
+			display: inline-block
+	p
+		font-size: 18px
+		text-transform: uppercase
+	.border-top
+		border-top: 2px solid #000
+		font-size: 12px
+		text-transform: lowercase
+
+
+/* EnD CaRT */
+
+
+
 
 
 
