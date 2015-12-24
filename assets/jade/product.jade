@@ -75,7 +75,7 @@ block content
 								i.icon.icon-squaer.icon-squaer-twitter
 						li
 							a(href="#")
-								i.icon.icon-squaer.icon-squaer-twitter
+								i.icon.icon-squaer.icon-squaer-vkontakte
 	.product-section-2
 		.container
 			.product-section-2-middle
@@ -99,6 +99,7 @@ block content
 			.products-block1
 				h2 что носить с этим изделием
 				.products.products-4
+					- var title = true
 					include ./template/product.jade
 					include ./template/product.jade
 					include ./template/product.jade
@@ -106,6 +107,7 @@ block content
 			.products-block2
 				h2 еще от этого дизанера
 				.products
+					- var title = false
 					include ./template/product.jade
 					include ./template/product.jade
 					include ./template/product.jade

@@ -117,6 +117,8 @@ body
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-transform: lowercase
+.icon-squaer
+	background-color: #fff
 
 .icon-favorites:before
 	content: 'a'
@@ -144,8 +146,16 @@ body
 	content: 'l'
 .icon-mail:before
 	content: 'm'
-
-
+.icon-squaer-facebook:before
+	content: 'n'
+.icon-o:before
+	content: 'o'
+.icon-squaer-vkontakte:before
+	content: 'p'
+.icon-r:before
+	content: 'r'
+.icon-squaer-twitter:before
+	content: 's'
 
 /* EnD IcONFONT */
 
@@ -440,6 +450,8 @@ header
 			text-decoration: none
 			line-height: .6
 			color: #1f1f1f
+			&:hover
+				color: #40c2f3
 		ul
 			display: none
 			margin-top: 8px
@@ -468,6 +480,8 @@ header
 				li
 					a
 						color: #1f1f1f
+						&:hover
+							color: #40c2f3
 					&.active
 						a
 							color: #40c2f3
@@ -996,11 +1010,11 @@ button.mfp-close
 				width: auto
 				margin: 0 auto
 	.description
-		margin-top: 26px
 		a
 			display: block
 			text-decoration: none
 			color: #000
+			padding-top: 26px
 		h3
 			font-size: 18px
 			font-weight: normal
@@ -1013,6 +1027,8 @@ button.mfp-close
 			line-height: 1.2
 		.price
 			margin-top: 20px
+			font-family: "FuturaFuturisRegular", $helvetica
+			font-weight: bold
 
 /* EnD PrODUCT */
 
@@ -1079,8 +1095,14 @@ button.mfp-close
 				&:hover
 					background-color: #fff
 	.social
+		line-height: 0
+		margin-top: 83px
 		li
 			display: inline-block
+			a
+				color: #b7b7b7
+				font-size: 32px
+				display: block
 	.SlectBox
 		width: 100px
 		padding-top: 9px
@@ -1164,7 +1186,8 @@ button.mfp-close
 		display: inline-block
 
 .product-section-3
-	margin-top: 30px
+	margin-top: 85px
+	margin-bottom: 65px
 .product-section-3-col-left,.product-section-3-col-right
 	@extend .col
 	width: 49%
@@ -1213,8 +1236,6 @@ button.mfp-close
 .product-section-3-col-right
 	margin-left: 1%
 
-
-	
 /* EnD .product-section-2 */
 
 
