@@ -207,6 +207,8 @@ body
 	font-family: "FuturaFuturisRegular", $helvetica
 	font-weight: bold
 	font-size: 14px
+	text-decoration: none
+	display: inline-block
 	+transition(all .1s ease 0s)
 	&.button-gray
 		border: 2px solid #d3d3d3
@@ -307,6 +309,107 @@ body
 .status-blue
 	color: #0089fe
 /* EnD tabel */
+
+
+
+/* .banner-footer */
+.banner-footer-left,.banner-footer-right
+	@extend .col
+	width: 49%
+	.banner
+		height: 303px
+		background-repeat: no-repeat
+		background-size: cover
+		text-align: center
+		a
+			width: 100%
+			height: 100%
+			display: block
+			box-sizing: border-box
+			padding-top: 120px
+			text-decoration: none
+			line-height: 1.2
+			color: #fff
+			position: relative
+			&:hover
+				&:before
+					content: ''
+					position: absolute
+					width: 100%
+					height: 100%
+					background-color: #000
+					top: 0
+					left: 0
+					opacity: .3
+					z-index: 1
+		h3
+			text-transform: uppercase
+			font-size: 17px
+			position: relative
+			z-index: 2
+		p
+			font-size: 12px
+			margin-top: 10px
+			position: relative
+			z-index: 2
+		&.banner1
+			background-image: url('img/banner1.jpg')
+		&.banner2
+			background-image: url('img/banner2.jpg')
+.banner-footer-left
+	margin-right: 1%
+.banner-footer-right
+	margin-left: 1%
+/* EnD .banner-footer */
+
+/* PoINTS */
+.points
+	width: 100%
+	height: 100%
+	.container
+		width: 100%
+		height: 100%
+		position: relative
+.point
+	position: absolute
+	width: 10px
+	height: 10px
+	border-radius: 50%
+	background-color: #fff
+	box-shadow: 1px 1px 3px rgba(0,0,0,.3)
+.tooltip-block
+	position: relative
+	.tooltip
+		position: absolute
+		top: 12px
+		left: 12px
+		background-color: #fff
+		border-radius: 5px
+		padding: 15px 25px 25px
+		width: 270px
+		box-sizing: border-box
+		box-shadow: 1px 1px 3px rgba(0,0,0,.3)
+		&:before
+			content: ''
+		h3
+			text-transform: uppercase
+			margin-top: 30px
+			line-height: 1.2
+		p
+			margin-top: 10px
+			line-height: 1.2
+		.price
+			margin-top: 10px
+			font-family: "FuturaFuturisRegular", $helvetica
+			font-weight: bold
+			font-size: 14px
+		.button
+			width: 100%
+			padding: 15px 0
+			text-transform: uppercase
+			margin-top: 20px
+
+/* EnD PoINTS */
 
 
 /* MaIN */
@@ -1222,7 +1325,6 @@ button.mfp-close
 				text-transform: lowercase
 		&:checked 
 			&+ label:before
-				border: 3px solid #8a8b8b
 				background: #000
 
 /* EnD PrODUCT */
@@ -1377,54 +1479,6 @@ button.mfp-close
 .product-section-3
 	margin-top: 85px
 	margin-bottom: 65px
-.product-section-3-col-left,.product-section-3-col-right
-	@extend .col
-	width: 49%
-	.banner
-		height: 303px
-		background-repeat: no-repeat
-		background-size: cover
-		text-align: center
-		a
-			width: 100%
-			height: 100%
-			display: block
-			box-sizing: border-box
-			padding-top: 120px
-			text-decoration: none
-			line-height: 1.2
-			color: #fff
-			position: relative
-			&:hover
-				&:before
-					content: ''
-					position: absolute
-					width: 100%
-					height: 100%
-					background-color: #000
-					top: 0
-					left: 0
-					opacity: .3
-					z-index: 1
-		h3
-			text-transform: uppercase
-			font-size: 17px
-			position: relative
-			z-index: 2
-		p
-			font-size: 12px
-			margin-top: 10px
-			position: relative
-			z-index: 2
-		&.banner1
-			background-image: url('img/banner1.jpg')
-		&.banner2
-			background-image: url('img/banner2.jpg')
-.product-section-3-col-left
-	margin-right: 1%
-.product-section-3-col-right
-	margin-left: 1%
-
 /* EnD .product-section-2 */
 
 
@@ -2015,6 +2069,117 @@ button.mfp-close
 		padding: 15px 30px
 		text-transform: uppercase
 /* EnD FaVORITES */
+
+
+/* BlOGTEXT */
+.blogtext-section-1-col-left
+	@extend .col
+	width: 25%
+	text-align: left
+	a
+		@extend .bold
+		color: #000
+		font-size: 18px
+		display: inline-block
+		text-decoration: none
+		line-height: 1
+		border-bottom: 2px solid #000
+		text-transform: lowercase
+		margin-top: 70px
+.blogtext-section-1-col-middle
+	@extend .col
+	width: 50%
+	text-align: center
+	margin-top: 90px
+	h1
+		font-size: 30px
+		font-weight: normal
+		line-height: 1.2
+		text-transform: uppercase
+		margin-top: 45px
+		letter-spacing: 1px
+	.social
+		font-size: 0
+		li
+			display: inline-block
+			font-size: 35px
+			a
+				color: #40c2f3
+				&:hover
+					color: #196886
+	p
+		font-size: 12px
+		padding-bottom: 5px
+		strong
+			font-family: "FuturaDemi", $helvetica
+			font-weight: normal
+			font-size: 14px
+.blogtext-section-1-col-right
+	@extend .col
+	width: 25%
+	text-align: right
+
+.photo-description
+	text-align: left
+	font-size: 12px
+	line-height: 1.2
+	margin-top: 25px
+
+.blogtext-section-2
+	margin-top: 50px
+	text-align: center
+	background-color: #f9f9f9
+
+.img-big
+	height: 765px
+	background-position: center center
+	background-size: contain
+	background-repeat: no-repeat
+
+.blogtext-section-4
+	margin-top: 50px
+.blogtext-section-4-col
+	@extend .col
+	width: 50%
+	padding: 0 55px
+	&.blogtext-section-4-col-center
+		text-align: center
+		p
+		margin-top: 10px
+	p
+		padding: 6px 0
+		line-height: 1.3
+		letter-spacing: 1px
+.blogtext-section-5
+	text-align: right
+	background-color: #f9f9f9
+	margin-top: 55px
+.blogtext-section-7
+	margin-top: 20px
+	text-align: center
+	.photo-description 
+		padding: 5px 25%
+	.blogtext-section-text
+		margin-top: 20px
+		width: 100%
+	.center
+		padding: 5px 25%
+		letter-spacing: 1px
+		text-align: justify
+		line-height: 1.3
+	.incut
+		float: left
+		width: 380px
+		font-family: "FuturaDemi", $helvetica
+		font-weight: normal
+		font-size: 24px
+		box-sizing: border-box
+		padding: 70px 85px 90px 35px
+		text-align: left
+.blogtext-section-8
+	margin-top: 105px
+	margin-bottom: 70px
+/* EnD BlOGTEXT */
 
 //ALWAYS END
 @import "_media.sass"

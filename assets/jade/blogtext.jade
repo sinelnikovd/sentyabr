@@ -1,0 +1,90 @@
+extends ./template/template.jade
+
+block title
+	title Блог текст
+
+block content
+	- var reg = true
+	include ./template/header.jade
+	.blogtext-section-1
+		.container
+			.colums
+				.blogtext-section-1-col-left
+					a(href="#") к списку дизайнеров
+				.blogtext-section-1-col-middle
+					.logo
+						img(src="img/logo-big.png", alt="")
+					h1 гардероб героини <br>светской хроники
+					ul.social
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-facebook
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-twitter
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-vkontakte
+					p
+						strong фото 
+						| Фотограф; 
+						strong стиль 
+						| Стилист; 
+						strong модель 
+						| Модель; 
+						strong визаж 
+						| Визажист. 
+					p
+						strong тэги: 
+						| гардероб, сентябрь, героиня
+				.blogtext-section-1-col-right
+					.to_story
+						a(href="#")
+							i.icon.icon-story
+							| в магазин
+	.blogtext-section-2
+		.img-big(style="background-image: url('./img/blogtext1.jpg')")
+			.points
+				.container
+					.point(style="top:50px; left:200px")
+						.tooltip-block
+							.tooltip
+								img(src="img/shapka.png", alt="")
+								h3 Lorem ipsum <br>dolor sit amet.
+								p Далеко-далеко за словесными горами.
+								p.price 134,000 
+									i.tenge n
+								a(href="#").button.button-black Смотреть
+	.blogtext-section-3
+		.container
+			p.photo-description На Ане: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд;<br> на Айгуль: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд.
+	.blogtext-section-4
+		.container
+			.colums
+				.blogtext-section-4-col
+					p “It’s about taking her out of urban life and putting her feet on the sand. It’s where I long to be, more and more,” said Phoebe Philo in her debrief about Céline, as dozens of journalists jostled to shove their iPhones in her face. But the background of Céline—its conceptual tented setting, its variety, the storming briskness of her models—cannot be captured in a convenient old-school sound bite about color, silhouette, and theme. Philo rebuilt Céline by trusting her instincts, and by trusting that other women are tuned into the same wavelength. And now she’s getting more outspoken about it. “I am somebody who is interested in how clothes make us feel,” she said, “and in how we behave in different places. I thought, If you were traveling for a year, what would you need to take with you?”
+					p Where were her model-avatars heading? The space, constructed by FOS, a Danish installation artist, suggested something between a festival hangout and an art biennial in a hot locale, but the music was a mechanistic drumming that kept pace with the stream of girls, marching swiftly and with intent, shod in utilitarian ankle boots, or almost-medieval woven-leather pointy flats.
+					p If anything has turned a corner at Céline since the last couple of shows, it’s the feeling that an incipient conceptualism and eccentricity has been jettisoned. Instead, this was a grounded collection, a sophisticate’s compendium, giving the definitive word on wearing the ‘90s slip dress in pulled-together grown-up style; on handling the ‘80s tendency with a curvy shoulder line and a Jean Paul Gaultier rib-knit waist; on nodding to the milkmaid neckline with an abstracted trompe l‘oeil corseting; and on pants, pants, pants. What with the English menswear 
+				.blogtext-section-4-col.blogtext-section-4-col-center
+					img(src="img/blocktext2.jpg", alt="")
+					p.photo-description На Ане: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд;<br> на Айгуль: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд.
+	.blogtext-section-5
+		.img-big(style="background-image: url('./img/blogtext3.jpg'); background-position: right center;")
+	.blogtext-section-6
+		.container
+			p.photo-description На Ане: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд;<br> на Айгуль: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд.
+	.blogtext-section-7
+		.container
+				img(src="./img/blogtext4.jpg", alt="")
+				p.photo-description На Ане: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд;<br> на Айгуль: рубашка Бренд,<br> джинсы Бренд, ботинки Бренд.
+				.blogtext-section-text
+					p.center “It’s about taking her out of urban life and putting her feet on the sand. It’s where I long to be, more and more,” said Phoebe Philo in her debrief about Céline, as dozens of journalists jostled to shove their iPhones in her face. But the background of Céline—its conceptual tented setting, its variety, the storming briskness of her models—cannot be captured in a convenient old-school sound bite about color, silhouette, and theme. Philo rebuilt Céline by trusting her instincts, and by trusting that other women are tuned into the same wavelength. And now she’s getting more outspoken about it. “I am somebody who is interested in how clothes make us feel,” she said, “and in how we behave in different places. I thought, If you were traveling for a year, what would you need to take with you?”
+					span.incut There is, and should be, no one look, but a spectrum of equally valid looks for many of us to feel like ourselves in.
+					p.center Where were her model-avatars heading? The space, constructed by FOS, a Danish installation artist, suggested something between a festival hangout and an art biennial in a hot locale, but the music was a mechanistic drumming that kept pace with the stream of girls, marching swiftly and with intent, shod in utilitarian ankle boots, or almost-medieval woven-leather pointy flats.
+					p.center If anything has turned a corner at Céline since the last couple of shows, it’s the feeling that an incipient conceptualism and eccentricity has been jettisoned. Instead, this was a grounded collection, a sophisticate’s compendium, giving the definitive word on wearing the ‘90s slip dress in pulled-together grown-up style; on handling the ‘80s tendency with a curvy shoulder line and a Jean Paul Gaultier rib-knit waist; on nodding to the milkmaid neckline with an abstracted trompe l‘oeil corseting; and on pants, pants, pants. What with the English menswear tweedy checked suiting, the wide cropped pair of trousers in extraordinarily high-shine black satin and, then, the olive green army parka and pants that swing out at the end, Philo reminded all and sundry that this is the house that services women with the best cuts available.
+					p.center Yet on the other hand, Céline is also a dress source. And here, there was a full spectrum of those as well, not just plunging lace-edged slips but practical workday survival looks in utititarian linen, and then, for evening or perhaps day-wafting on holiday, long fluid jersey dresses with high-waisted bodices and chaste-medieval scooped necks. A telling reaction to this collection was the instant straw poll going on among guests as they poured 
+	.blogtext-section-8
+		.container
+			include ./template/banner-footer.jade
+
+	include ./template/footer.jade
