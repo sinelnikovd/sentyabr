@@ -1693,9 +1693,177 @@ button.mfp-close
 		.border-top
 			width: 70%
 			font-size: 12px
-
-
 /* EnD CaRT */
+
+
+/* OrDER CoNFIRM */
+.orderc-section-1-col-left
+	@extend .col
+	width: 30%
+	.logo-parent
+		margin-top: 45px
+	.menu
+		margin-top: 45px
+.orderc-section-1-col-right
+	@extend .col
+	width: 70%
+	text-align: right
+
+.tabel
+	background-color: #f5f5f5
+	padding:  5px 15px
+	display: table
+	width: 100%
+	.tabel-row
+		display: table-row
+		.tabel-cell
+			display: table-cell
+			border-bottom: 2px solid #dadada
+			padding: 15px 0
+		.cell-1
+			width: 60%
+		.cell-2
+			width: 23%
+			text-align: right
+			padding-right: 15px
+		.cell-3
+			text-align: right
+			padding-right: 25px
+	.row-zagolovok
+		.tabel-cell
+			font-size: 12px
+			letter-spacing: 1px
+			padding: 0 0 5px
+		.cell-2
+			padding-right: 0
+		.cell-3
+			padding-right: 25px
+	.row-total
+		.tabel-cell
+			font-size: 12px
+			letter-spacing: 1px
+			border-bottom: none
+	
+.orderc-section-2
+	margin-top: 20px
+	h2
+		font-family: "FuturaDemi", $helvetica
+		font-weight: normal
+		font-size: 42px
+
+
+.orderc-section-3
+	margin-top: 55px
+	margin-bottom: 50px
+	h2
+		font-family: "FuturaDemi", $helvetica
+		font-weight: normal
+		font-size: 42px
+	.colums
+		margin-top: 20px
+.orderc-section-3-col
+	@extend .col
+	width: 33.33333%
+	padding: 0 10px
+	.footer-icon
+		padding: 0
+		margin-top: 75px
+	.footer-icon-col
+		width: 100%
+		padding: 50px 0
+	h3
+		text-transform: uppercase
+		font-size: 20px
+	.orderc-form
+		padding: 20px
+		background-color: #f5f5f5
+		text-align: left
+		margin-top: 42px
+	.orderc-text
+		padding: 6px
+		width: 100%
+		box-sizing: border-box
+	.input-group
+		margin: 15px 0
+		.button
+			width: 100%
+			text-transform: uppercase
+			padding: 10px 0
+	label,.label-date
+		font-size: 12px
+		text-transform: uppercase
+		display: block
+	input,.input-select
+		display: block
+	.input-select
+		.SumoSelect
+			width: 100%
+		.SlectBox
+			width: 100%
+			box-sizing: border-box
+	.input-date
+		.input-select
+			display: inline-block
+			&.select-day
+				.SlectBox
+					width: 80px
+			&.select-month
+				.SlectBox
+					width: 100px
+			&.select-year
+				.SlectBox
+					width: 90px
+	.orderc-button-parrent
+		margin-top: 50px
+		text-align: right
+		.orderc-button
+			padding: 15px 60px
+			text-align: center
+			text-transform: uppercase
+	.input-radio
+		margin-top: 15px
+		.radiobutton
+			vertical-align: top
+			margin: 0 3px 0 0
+			width: 15px
+			height: 15px
+			&:not(checked)
+				position: absolute
+				opacity: 0
+				&+ label
+					position: relative
+					padding: 0 0 0 40px
+					cursor: pointer
+					&:before
+						content: ''
+						position: absolute
+						top: 0
+						left: 0
+						width: 15px
+						height: 15px
+						border-radius: 13px
+						background: #fff
+						border: 1px solid #8a8b8b
+						box-sizing: border-box
+				&:checked 
+					&+ label:before
+						border: 3px solid #8a8b8b
+						background: #000
+	.input-check
+		width: 200px
+		float: right
+		height: 80px
+		margin-top: 230px
+		.border-top
+			width: 70%
+	.offret
+		margin-top: 30px
+		a
+			color: #494949
+			&:hover
+				text-decoration: none
+
+/* EnD OrDER CoNFIRM */
 
 
 

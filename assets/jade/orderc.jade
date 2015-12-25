@@ -1,0 +1,124 @@
+extends ./template/template.jade
+
+block title
+	title OrderC
+
+block content
+	- var reg = true
+	include ./template/header.jade
+	.orderc-section-1
+		.container
+			.colums
+				.orderc-section-1-col-left
+					.logo-parent
+						.logo
+							img(src="img/logo.png", alt="")
+				.orderc-section-1-col-right
+					.to_story
+						a(href="#")
+							i.icon.icon-story
+							| в магазин
+	.orderc-section-2
+		.container
+			h2 мой заказ
+			.tabel
+				.tabel-row.row-zagolovok
+					.tabel-cell.cell-1 наименование
+					.tabel-cell.cell-2 количество
+					.tabel-cell.cell-3 цена
+				.tabel-row
+					.tabel-cell.cell-1 Аi by aidana kozhageldina Пальто из кашемира с аппликацией из ситепона с открытой спиной, UK 8, зеленый
+					.tabel-cell.cell-2 1
+					.tabel-cell.cell-3 134,000 
+						i.tenge n
+				.tabel-row
+					.tabel-cell.cell-1 Аi by aidana kozhageldina Пальто из кашемира с аппликацией из ситепона с открытой спиной, UK 8, зеленый
+					.tabel-cell.cell-2 1
+					.tabel-cell.cell-3 134,000 
+						i.tenge n
+				.tabel-row.row-total
+					.tabel-cell.cell-1
+					.tabel-cell.cell-2 
+						p Сумма за товар
+						p Налог 2%
+						p Доставка
+					.tabel-cell.cell-3
+						p 134,000 
+							i.tenge n
+						p 2680 
+							i.tenge n
+						p 2500 
+							i.tenge n
+
+	.orderc-section-3
+		.container
+			h2 мои данные
+			.colums
+				.orderc-section-3-col
+					include ./template/footer-icon.jade
+				.orderc-section-3-col
+					h3 адрес доставки
+					.orderc-form
+						form
+							.input-group
+								label Имя
+									input(type="text" name="firstname").orderc-text
+							.input-group
+								label Фамилия
+									input(type="text" name="lastname").orderc-text
+							.input-group
+								label Адрес 01
+									input(type="text" name="addres01").orderc-text
+							.input-group
+								label Адрес 02
+									input(type="text" name="addres02").orderc-text
+							.input-group
+								label Город
+									input(type="text" name="city").orderc-text
+							.input-group
+								label Страна
+									input(type="text" name="country").orderc-text
+							.input-group
+								label Почтовый индекс
+									input(type="text" name="postcode").orderc-text
+							.input-group
+								label Телефон
+									input(type="tel" name="phone").data-inputmask.orderc-text
+							.input-group
+								.input-radio
+									input(type="radio" name="typedelivery").radiobutton#standartdelivery
+									label(for="standartdelivery") стандартная доставка
+								.input-radio
+									input(type="radio" name="typedelivery").radiobutton#rushdelivery
+									label(for="rushdelivery") срочная доставка
+							.orderc-button-parrent
+								button(type="submit").button.button-black.orderc-button сохранить
+				.orderc-section-3-col
+					h3 способ оплаты
+					.orderc-form
+						form
+							.input-group
+								.input-radio
+									input(type="radio" name="typepayment").radiobutton#cashpayment
+									label(for="cashpayment") оплата наличными при получении товара
+								.input-radio
+									input(type="radio" name="typepayment").radiobutton#cardpayment
+									label(for="cardpayment") оплата картой
+							.orderc-button-parrent
+								button(type="submit").button.button-black.orderc-button сохранить
+							.input-group.offret
+								.input-radio
+									input(type="radio" name="offret").radiobutton#offret
+									label(for="offret") Я согласен с условиями публичной 
+										a(href="#") оферты*
+					form
+						.input-group
+							.input-check
+								p 268,000 
+									i.tenge n
+								p.border-top итого
+						.orderc-button-parrent
+							button(type="submit").button.button-black.orderc-button оплатить
+
+
+	include ./template/footer.jade
