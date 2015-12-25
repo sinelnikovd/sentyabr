@@ -244,6 +244,71 @@ body
 		letter-spacing: 1px
 /* EnD .footer-icon */
 
+
+/* tabel */
+.tabel
+	background-color: #f5f5f5
+	padding:  5px 15px 15px
+	display: table
+	width: 100%
+	.tabel-row
+		display: table-row
+		.tabel-cell
+			display: table-cell
+			border-bottom: 2px solid #dadada
+			padding: 15px 0
+		.cell-1
+			width: 60%
+		.cell-2
+			width: 23%
+			text-align: right
+			padding-right: 15px
+		.cell-3
+			text-align: right
+			padding-right: 25px
+	.row-head
+		.tabel-cell
+			font-size: 12px
+			letter-spacing: 1px
+			padding: 0 0 5px
+		.cell-2
+			padding-right: 0
+		.cell-3
+			padding-right: 25px
+	.row-total
+		.tabel-cell
+			font-size: 12px
+			letter-spacing: 1px
+			border-bottom: none
+			padding: 15px 0 0
+	.row-date
+		.tabel-cell
+			font-size: 12px
+			letter-spacing: 1px
+			border-bottom: none
+			padding: 0
+.tabel-order
+	padding: 0 15px
+	background-color: #000
+	margin-top: 30px
+	.tabel-row
+		.tabel-cell
+			border-bottom: 0
+			color: #fff
+			text-transform: uppercase
+			letter-spacing: 1px
+			font-weight: bold
+			font-size: 12px
+			width: 50%
+.status
+	text-transform: lowercase
+.status-green
+	color: #56ce2c
+.status-blue
+	color: #0089fe
+/* EnD tabel */
+
+
 /* MaIN */
 
 /* HEADeR */
@@ -1709,41 +1774,7 @@ button.mfp-close
 	width: 70%
 	text-align: right
 
-.tabel
-	background-color: #f5f5f5
-	padding:  5px 15px
-	display: table
-	width: 100%
-	.tabel-row
-		display: table-row
-		.tabel-cell
-			display: table-cell
-			border-bottom: 2px solid #dadada
-			padding: 15px 0
-		.cell-1
-			width: 60%
-		.cell-2
-			width: 23%
-			text-align: right
-			padding-right: 15px
-		.cell-3
-			text-align: right
-			padding-right: 25px
-	.row-zagolovok
-		.tabel-cell
-			font-size: 12px
-			letter-spacing: 1px
-			padding: 0 0 5px
-		.cell-2
-			padding-right: 0
-		.cell-3
-			padding-right: 25px
-	.row-total
-		.tabel-cell
-			font-size: 12px
-			letter-spacing: 1px
-			border-bottom: none
-	
+
 .orderc-section-2
 	margin-top: 20px
 	h2
@@ -1866,8 +1897,23 @@ button.mfp-close
 /* EnD OrDER CoNFIRM */
 
 
+/* OrDER StORY */
+.orders-section-1-col-left
+	@extend .col
+	width: 30%
+	.logo-parent
+		margin-top: 45px
+	.menu
+		margin-top: 45px
+.orders-section-1-col-right
+	@extend .col
+	width: 70%
+	text-align: right
 
-
+.orders-section-2
+	margin-top: 50px
+	margin-bottom: 90px
+/* EnD OrDER StORY */
 
 
 //ALWAYS END

@@ -1,0 +1,109 @@
+extends ./template/template.jade
+
+block title
+	title orders
+
+block content
+	- var reg = true
+	include ./template/header.jade
+	.orders-section-1
+		.container
+			.colums
+				.orders-section-1-col-left
+					.logo-parent
+						.logo
+							img(src="img/logo.png", alt="")
+					.menu
+						ul.main-menu
+							li
+								a(href="#") мой профиль
+							li
+								a(href="#") список желаний
+							li
+								a(href="#") корзина
+							li
+								a(href="#") история покупок
+				.orders-section-1-col-right
+					.to_story
+						a(href="#")
+							i.icon.icon-story
+							| в магазин
+	.orders-section-2
+		.container
+			.tabel.tabel-order
+				.tabel-row.row-order
+					.tabel-cell Заказ № 0123456  
+					.tabel-cell статус: 
+						span.status.status-green получено
+			.tabel
+				.tabel-row.row-head
+					.tabel-cell.cell-1 наименование
+					.tabel-cell.cell-2 количество
+					.tabel-cell.cell-3 цена
+				.tabel-row
+					.tabel-cell.cell-1 Аi by aidana kozhageldina Пальто из кашемира с аппликацией из ситепона с открытой спиной, UK 8, зеленый
+					.tabel-cell.cell-2 1
+					.tabel-cell.cell-3 134,000 
+						i.tenge n
+				.tabel-row
+					.tabel-cell.cell-1 Аi by aidana kozhageldina Пальто из кашемира с аппликацией из ситепона с открытой спиной, UK 8, зеленый
+					.tabel-cell.cell-2 1
+					.tabel-cell.cell-3 134,000 
+						i.tenge n
+				.tabel-row.row-total
+					.tabel-cell.cell-1
+					.tabel-cell.cell-2 
+						p Сумма за товар
+						p Налог 2%
+						p Доставка
+					.tabel-cell.cell-3
+						p 134,000 
+							i.tenge n
+						p 2680 
+							i.tenge n
+						p 2500 
+							i.tenge n
+				.tabel-row.row-date
+					.tabel-cell
+						p дата оформления заказа: 20/05/2015
+						p дата доставки: 22/05/2015
+			.tabel.tabel-order
+				.tabel-row.row-order
+					.tabel-cell Заказ № 0123456  
+					.tabel-cell статус: 
+						span.status.status-blue в пути
+			.tabel
+				.tabel-row.row-head
+					.tabel-cell.cell-1 наименование
+					.tabel-cell.cell-2 количество
+					.tabel-cell.cell-3 цена
+				.tabel-row
+					.tabel-cell.cell-1 Аi by aidana kozhageldina Пальто из кашемира с аппликацией из ситепона с открытой спиной, UK 8, зеленый
+					.tabel-cell.cell-2 1
+					.tabel-cell.cell-3 134,000 
+						i.tenge n
+				.tabel-row
+					.tabel-cell.cell-1 Аi by aidana kozhageldina Пальто из кашемира с аппликацией из ситепона с открытой спиной, UK 8, зеленый
+					.tabel-cell.cell-2 1
+					.tabel-cell.cell-3 134,000 
+						i.tenge n
+				.tabel-row.row-total
+					.tabel-cell.cell-1
+					.tabel-cell.cell-2 
+						p Сумма за товар
+						p Налог 2%
+						p Доставка
+					.tabel-cell.cell-3
+						p 134,000 
+							i.tenge n
+						p 2680 
+							i.tenge n
+						p 2500 
+							i.tenge n
+				.tabel-row.row-date
+					.tabel-cell
+						p дата оформления заказа: 20/05/2015
+						p дата доставки: 
+							span.status.status-blue в пути
+
+	include ./template/footer.jade
