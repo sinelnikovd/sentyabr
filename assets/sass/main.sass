@@ -123,6 +123,7 @@ body
 	font-family: "Tenge"
 	font-weight: normal
 	font-style: normal
+	text-transform: lowercase
 
 /* EnD TeNGE*/
 
@@ -1584,6 +1585,9 @@ button.mfp-close
 	width: 70%
 	text-align: right
 
+.cart-section-2
+	margin-top: 60px
+
 .cart-item
 	+clearfix
 	position: relative
@@ -1595,6 +1599,7 @@ button.mfp-close
 		border: 1px solid rgba(0,1,1,.12)
 		position: relative
 		background-color: #fff
+		overflow: hidden
 		.number
 			position: absolute
 			top: 5px
@@ -1605,43 +1610,89 @@ button.mfp-close
 		position: absolute
 		top: 5px
 		right: 5px
-		font-size: 40px
+		font-size: 50px
 		cursor: pointer
 	.description
 		@extend .col
 		width: 80%
 	.description-row-1
 		font-size: 0
-		padding-top: 50px
+		padding-top: 90px
 		padding-left: 30px
 		width: 100%
 		box-sizing: border-box
 		.description-col-1,.description-col-2,.description-col-3
 			font-size: 14px
 			display: inline-block
-			margin-left: 30px
+			margin-right: 5%
 		.description-col-1
 			max-width: 300px
-			width: 40%
+			width: 25%
 		.description-col-2
 			max-width: 300px
-			width: 20%
+			width: 18%
 		.description-col-3
 			max-width: 200px
-			width: 40%
+			width: 18%
+			input
+				width: 100%
+				box-sizing: border-box
+				font-size: 24px
+				border: 0
+				padding: 0
+				text-align: center
+				background-color: transparent
+			.input-group
+				position: relative
+				.nav-up,.nav-down
+					border: 1px solid #e2e2e2
+					position: absolute
+					bottom: 0
+					top: 0
+					background-color: #fff
+					width: 30px
+				.nav-up
+					left: 0
+				.nav-down
+					right: 0
 	.description-row-2
 		font-size: 0
-		padding-top: 50px
+		padding-top: 100px
+		padding-left: 30px
 		.description-col-1,.description-col-2
 			font-size: 14px
 			display: inline-block
+			width: 31%
+		.description-col-1
+			margin-right: 22%
 	p
 		font-size: 18px
 		text-transform: uppercase
-	.border-top
-		border-top: 2px solid #000
-		font-size: 12px
-		text-transform: lowercase
+		&.border-top
+			font-size: 12px
+			text-transform: lowercase
+
+.border-top
+	border-top: 2px solid #000
+	font-size: 12px
+	text-transform: lowercase
+
+.cart-section-3
+	margin-top: 90px
+	margin-bottom: 40px
+	.check
+		width: 20%
+		float: right
+		.button
+			margin-top: 30px
+			width: 100%
+			text-transform: uppercase
+			padding: 15px 0
+		p
+			font-size: 18px
+		.border-top
+			width: 70%
+			font-size: 12px
 
 
 /* EnD CaRT */

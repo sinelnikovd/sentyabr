@@ -59,8 +59,43 @@ block content
 								p.border-top стоимость продукта
 					.close
 						i.icon.icon-close
-
+				.cart-item
+					.preview
+						img(src="img/cart.jpg", alt="")
+						span.number №1
+					.description
+						.description-row-1
+							.description-col-1
+								p пальто
+								p.border-top наименование
+							.description-col-2
+								p 34 (XS)
+								p.border-top размер
+							.description-col-3
+								.input-group
+									span.nav-up
+									span.nav-down
+									input(type="number" value="1")
+								p.border-top размер
+						.description-row-2
+							.description-col-1
+								p aidana kozhageldina
+								p.border-top дизайнер
+							.description-col-2
+								p 134,000 
+									i.tenge n
+								p.border-top стоимость продукта
+					.close
+						i.icon.icon-close
 	.cart-section-3
+		.container
+			.colums
+				.check
+					p 268,000 
+						i.tenge n
+					p.border-top итого
+					button.button.button-black оформить заказ
+	.cart-section-4
 		.container
 			include ./template/footer-icon.jade
 
