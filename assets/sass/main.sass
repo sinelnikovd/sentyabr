@@ -130,15 +130,15 @@ body
 /* IcONFONT */
 
 .icon
-	position: relative;
-	top: 1px;
-	display: inline-block;
-	font-family: 'IconFont';
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	position: relative
+	top: 1px
+	display: inline-block
+	font-family: 'IconFont'
+	font-style: normal
+	font-weight: normal
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
 	text-transform: lowercase
 .icon-squaer
 	background-color: #fff
@@ -1054,6 +1054,7 @@ button.mfp-close
 .products
 	margin-top: 40px
 	font-size: 0
+	text-align: left
 .products-4
 	.product
 		width: 25%
@@ -1077,18 +1078,52 @@ button.mfp-close
 	&:hover
 		opacity: .9
 .product
+	text-align: center
 	vertical-align: top
 	display: inline-block
 	width: 33.333333%
 	padding-left: 10px
 	box-sizing: border-box
-	margin-bottom: 20px
+	margin-bottom: 30px
 	.nav-carousel-prev
 		@extend .center-nav
 		left: 5px
 	.nav-carousel-next
 		@extend .center-nav
 		right: 5px
+	.checked-favorites
+		position: absolute
+		top: 5px
+		z-index: 3
+		font-size: 20px
+		left: 5px
+	.delet-favorites
+		position: absolute
+		top: 5px
+		z-index: 3
+		font-size: 20px
+		right: 5px
+		cursor: pointer
+	.addcart
+		position: absolute
+		bottom: 5px
+		left: 5px
+		z-index: 3
+		font-size: 12px
+		cursor: pointer
+		display: none
+		&:hover
+			text-decoration: underline
+	.edit
+		position: absolute
+		bottom: 5px
+		right: 5px
+		z-index: 3
+		font-size: 12px
+		cursor: pointer
+		display: none
+		&:hover
+			text-decoration: underline
 	.sizes
 		@extend .center-nav
 		opacity: 1
@@ -1112,6 +1147,10 @@ button.mfp-close
 				bottom: 0
 				background-color: rgba(0,0,0,.05)
 		.sizes
+			display: block
+		.addcart
+			display: block
+		.edit
 			display: block
 	.preview
 		position: relative
@@ -1143,10 +1182,48 @@ button.mfp-close
 			letter-spacing: 1px
 			margin-top: 5px
 			line-height: 1.2
+		.uk
+			margin-top: 10px
+			&.uk-not
+				color: #fb0303
 		.price
-			margin-top: 20px
+			margin-top: 10px
 			font-family: "FuturaFuturisRegular", $helvetica
 			font-weight: bold
+			font-size: 14px
+			.sale
+				text-decoration: line-through
+				color: #ff0000
+
+.checkbox-favorites
+	vertical-align: top
+	margin: 0 3px 0 0
+	width: 15px
+	height: 15px
+	&:not(checked)
+		position: absolute
+		opacity: 0
+		&+ label
+			position: relative
+			cursor: pointer
+			&:before
+				content: 'l'
+				position: absolute
+				top: 0
+				left: 0
+				box-sizing: border-box
+				display: inline-block
+				font-family: 'IconFont'
+				font-style: normal
+				font-weight: normal
+				line-height: 1
+				-webkit-font-smoothing: antialiased
+				-moz-osx-font-smoothing: grayscale
+				text-transform: lowercase
+		&:checked 
+			&+ label:before
+				border: 3px solid #8a8b8b
+				background: #000
 
 /* EnD PrODUCT */
 
@@ -1915,6 +1992,29 @@ button.mfp-close
 	margin-bottom: 90px
 /* EnD OrDER StORY */
 
+
+/* FaVORITES */
+.favorites-section-1-col-left
+	@extend .col
+	width: 30%
+	.logo-parent
+		margin-top: 45px
+	.menu
+		margin-top: 45px
+.favorites-section-1-col-right
+	@extend .col
+	width: 70%
+	text-align: right
+
+.favorites-section-3
+	text-align: right
+	padding: 80px 0
+	font-size: 0
+	.button
+		font-size: 14px
+		padding: 15px 30px
+		text-transform: uppercase
+/* EnD FaVORITES */
 
 //ALWAYS END
 @import "_media.sass"

@@ -1,0 +1,51 @@
+extends ./template/template.jade
+
+block title
+	title Избранное
+
+block content
+	- var reg = true
+	include ./template/header.jade
+	.favorites-section-1
+		.container
+			.colums
+				.favorites-section-1-col-left
+					.logo-parent
+						.logo
+							img(src="img/logo.png", alt="")
+					.menu
+						ul.main-menu
+							li
+								a(href="#") мой профиль
+							li
+								a(href="#") список желаний
+							li
+								a(href="#") корзина
+							li
+								a(href="#") история покупок
+				.favorites-section-1-col-right
+					.to_story
+						a(href="#")
+							i.icon.icon-story
+							| в магазин
+
+	.favorites-section-2
+		.container
+			.products.products-4
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+					include ./template/product-fav.jade
+	.favorites-section-3
+		.container
+			button(type="submit").button.button-gray добавить выбранное в корзину
+			button(type="submit").button.button-black добавить все в корзину
+	include ./template/footer.jade
