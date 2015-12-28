@@ -4,6 +4,8 @@ $(document).ready(function() {
 		$('input[data-inputmask]').mask("+7 (999) 999-99-99");
 	}*/
 
+	$("select[name=color]").closest(".SumoSelect").find(".options li label").html("<span style='bacgrond-color: "+$("select[name=color]").closest(".SumoSelect").find(".options li label").text()+"'></span>")
+
 	var owlmain = $('.main-section-2-carousel .items-carousel').owlCarousel({
 		loop:true,
 		nav:false,

@@ -4,208 +4,109 @@
 {% block breadcrumb %}{% endblock %}
 
 {% block contentPage %}
-<div class="product-section-1">
-	<div class="container">
-		<div class="colums">
-			<div class="product-section-1-col-1">
-				<div class="logo-parent">
-					<div class="logo"><img src="img/logo.png" alt=""></div>
-				</div>
-				<div class="menu">
-					<ul class="main-menu">
-						<li><a href="#">новое</a></li>
-						<li><a href="#">женщины</a></li>
-						<li><a href="#">мужчины</a></li>
-						<li><a href="#">дизайнеры</a></li>
-						<li><a href="#">outlet</a></li>
-					</ul>
-				</div>
-				<div class="miniauter">
-					<ul>
-						<li><a href="#"><img src="img/mini1.jpg" alt=""></a></li>
-						<li><a href="#"><img src="img/mini2.jpg" alt=""></a></li>
-						<li><a href="#"><img src="img/mini3.jpg" alt=""></a></li>
-						<li><a href="#"><img src="img/mini4.jpg" alt=""></a></li>
-					</ul>
+<div class="catalog-section-1">
+			<div class="container">
+				<div class="colums">
+					<div class="catalog-section-1-col-left">
+						<div class="logo-parent">
+							<div class="logo"><img src="img/logo.png" alt=""></div>
+						</div>
+						<div class="menu">
+							<ul class="main-menu">
+								{% for item in Categories %}
+									{% if item.childs|length > 0 %}
+										<li><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>
+												<ul>
+													{% for child in item.childs %}
+													<li><a href="/catalog/all/{{child.id}}">{{child.title}}</a></li>
+													{% endfor %}
+												</ul><a href="#" class="view-all">смотреть все</a>
+											</li>
+									{% else %}
+										<li ><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+					<div class="catalog-section-1-col-right">
+						<div class="catalog-banner-header" style="background-image: url('/airdraw/{{Catalog.photo_banner.spath}}/857/442')"></div>
+					</div>
 				</div>
 			</div>
-			<div class="product-section-1-col-2"><img src="img/product.jpg" alt=""></div>
-			<div class="product-section-1-col-3">
-				<h1>ai by aidana <br>kozhageldina</h1>
-				<p>Пальто из кашемира с аппликацией из ситепона с открытой спиной</p>
-				<p class="price">134,000<i class="tenge">n</i></p>
-				<form>
-					<div class="input-group">
-						<select name="size" class="size sumoselect">
-							<option>размер</option>
-							<option>голубой</option>
-							<option>желтый</option>
-							<option>синий</option>
-						</select>
-					</div><a href="#" class="link-size"> <span>Таблица размеров/ </span>Подобрать размер</a>
-					<div class="input-group">
-						<select name="color" class="color sumoselect">
-							<option>цвет</option>
-							<option>голубой</option>
-							<option>голубой</option>
-							<option>синий</option>
-						</select>
-					</div>
-					<div class="input-group-button">
-						<div class="input-group-button-1">
-							<button type="submit" class="button button-black">Купить</button>
-						</div>
-						<div class="input-group-button-2">
-							<button type="submit" class="button button-gray">Хотеть</button>
-						</div>
-					</div>
+		</div>
+		<div class="catalog-section-options">
+			<div class="container">
+				<form method="get">
+					<select name="category" multiple="multiple" class="category sumoselect">
+						<option>Без рукавов</option>
+						<option>Футболки</option>
+						<option>Джемперы</option>
+						<option>Пуловеры</option>
+					</select>
+					<select name="price" class="price sumoselect">
+						<option>цена</option>
+						{% set min = PriceList.min|default(0) %}
+						{% set max = PriceList.max|default(50000) %}
+						{% set iter = max/5000 %}
+						{% for item in 0..iter %}
+							<option>{{ item*5000 }}</option>
+						{% endfor %}
+						<option>{{ max }}</option>
+					</select>
+					<select name="color" class="color sumoselect">
+						<option>цвет</option>
+						{% for item in ParamsList %}
+							{% if item.name == "color" %}
+								{% for val in item.vals %}
+								<option>{{ val.value }}</option>
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+					</select>
+					<select name="size" class="size sumoselect">
+						<option>размер</option>
+						{% for item in ParamsList %}
+							{% if item.name == "size" %}
+								{% for val in item.vals %}
+								<option>{{ val.value }}</option>
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+					</select>
+					<select name="design" class="design sumoselect">
+						<option>дизайнер</option>
+						<option>голубой</option>
+						<option>желтый</option>
+						<option>синий</option>
+					</select>
 				</form>
-				<ul class="social">
-					<li><a href="#"><i class="icon icon-squaer icon-squaer-facebook"></i></a></li>
-					<li><a href="#"><i class="icon icon-squaer icon-squaer-twitter"></i></a></li>
-					<li><a href="#"><i class="icon icon-squaer icon-squaer-vkontakte"></i></a></li>
-				</ul>
 			</div>
 		</div>
-	</div>
-</div>
-<div class="product-section-2">
-	<div class="container">
-		<div class="product-section-2-middle">
-			<ul class="hexcode">
-				<li><a href="#">#белый</a></li>
-				<li><a href="#">#пальто</a></li>
-				<li><a href="#">#всявбелом</a></li>
-				<li><a href="#">#пуговицывдваряда </a></li>
-				<li><a href="#">#модельвтеплесентябрьдоволен</a></li>
-				<li><a href="#">#почтихлое</a></li>
-			</ul>
-			<h2>описание</h2>
-			<p>Jil Sander's white coat exemplifies the label's clean, contemporary approach to tailoring. This crisp double-breasted style is cut from structured wool-gabardine lined in a smooth silk-blend for added warmth. Wear it over turtleneck sweaters and smart pants.</p>
-			<h2>о дизайнере</h2>
-			<p>Jil Sander's white coat exemplifies the label's clean, contemporary approach to tailoring. This crisp double-breasted style is cut from structured wool-gabardine lined in a smooth silk-blend for added warmth. Wear it over turtleneck sweaters and smart pants.</p>
-		</div>
-		<div class="products-block1">
-			<h2>что носить с этим изделием</h2>
-			<div class="products products-4">
-				<div class="product">
-					<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
-						<div class="items-carousel">
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-						</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
-					</div>
-					<div class="description"><a href="#">
-							<h3>khan kuchum</h3>
-							<p>Пальто из кашемира с аппликацией</p>
-							<p class="price">134,000 <i class="tenge">n</i></p></a></div>
-				</div>
-				<div class="product">
-					<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
-						<div class="items-carousel">
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-						</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
-					</div>
-					<div class="description"><a href="#">
-							<h3>khan kuchum</h3>
-							<p>Пальто из кашемира с аппликацией</p>
-							<p class="price">134,000 <i class="tenge">n</i></p></a></div>
-				</div>
-				<div class="product">
-					<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
-						<div class="items-carousel">
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-						</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
-					</div>
-					<div class="description"><a href="#">
-							<h3>khan kuchum</h3>
-							<p>Пальто из кашемира с аппликацией</p>
-							<p class="price">134,000 <i class="tenge">n</i></p></a></div>
-				</div>
-				<div class="product">
-					<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
-						<div class="items-carousel">
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-						</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
-					</div>
-					<div class="description"><a href="#">
-							<h3>khan kuchum</h3>
-							<p>Пальто из кашемира с аппликацией</p>
-							<p class="price">134,000 <i class="tenge">n</i></p></a></div>
+		<div class="catalog-section-products">
+			<div class="container">
+				<h2>футболки</h2>
+				<div class="products">
+					{% if Products|length > 0 %}
+					{% for item in Products %} 
+						<div class="product">
+							<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
+								<div class="items-carousel">
+									{% for photo in item.photos %}
+										<div class="item-carousel"><a href="/product/{{item.id}}"><img src="/airdraw/{{photo.spath}}/210/315" alt=""></a></div>
+									{% endfor %}
+								</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
+							</div>
+							<div class="description"><a href="/product/{{item.id}}">
+									<h3>{{item.title}}</h3>
+									<p>Пальто из кашемира с аппликацией</p>
+									<p class="price">{{ item.price|number_format(0,'.',',') }} <i class="tenge">n</i></p></a></div>
+						</div>
+					{% endfor %}
+					{% else %}
+						<div>В данной категории нет товаров</div>
+					{% endif %}
 				</div>
 			</div>
 		</div>
-		<div class="products-block2">
-			<h2>еще от этого дизанера</h2>
-			<div class="products">
-				<div class="product">
-					<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
-						<div class="items-carousel">
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-						</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
-					</div>
-					<div class="description"><a href="#">
-							<p>Пальто из кашемира с аппликацией</p>
-							<p class="price">134,000 <i class="tenge">n</i></p></a></div>
-				</div>
-				<div class="product">
-					<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
-						<div class="items-carousel">
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-						</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
-					</div>
-					<div class="description"><a href="#">
-							<p>Пальто из кашемира с аппликацией</p>
-							<p class="price">134,000 <i class="tenge">n</i></p></a></div>
-				</div>
-				<div class="product">
-					<div class="preview carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span>
-						<div class="items-carousel">
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-							<div class="item-carousel"><a href="#"><img src="img/shmot.png" alt=""></a></div>
-						</div><span class="sizes">34, 36, 38, 42</span><span class="nav-carousel-next"><i class="icon icon-next"></i></span>
-					</div>
-					<div class="description"><a href="#">
-							<p>Пальто из кашемира с аппликацией</p>
-							<p class="price">134,000 <i class="tenge">n</i></p></a></div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="product-section-3">
-	<div class="container">
-		<div class="colums">
-			<div class="banner-footer-left">
-				<div class="banner banner1"><a href="#">
-						<h3>гардероб <br>звезды инстаграма <br>@lalala</h3>
-						<p>О подарках, подписчиках и любимых фильтрах</p></a></div>
-			</div>
-			<div class="banner-footer-right">
-				<div class="banner banner2"><a href="#">
-						<h3>гардероб <br>звезды инстаграма <br>@lalala</h3>
-						<p>О подарках, подписчиках и любимых фильтрах</p></a></div>
-			</div>
-		</div>
-	</div>
-</div>
 {% endblock %}
