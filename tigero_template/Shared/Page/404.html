@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block titlePage %}404 Страница не найдена{% endblock %}
+
+{% block breadcrumb %}
+<ol class="breadcrumb">
+    <li><a href="/">Главная</a></li>   
+    <li class="active">404 - страница не найдена</li> 
+</ol>  
+{% endblock %}
+{% block contentPage %}   
+<h1>404 - страница не найдена</h1>
+<p>
+    Попробуйте перейти на <a href="/">главную</a>.
+</p>
+{% endblock %}

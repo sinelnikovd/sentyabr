@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{{Shop.desc}}">
+        <meta name="keywords" content="{{Shop.keywords}}">
+        <meta name="author" content="{{Shop.author}}">
+    
+        <title>{% block titlePage %}{% endblock %} &mdash; {{Shop.title}}</title>
+        
+        <!-- Bootstrap -->
+    <link href="/airfile/plugins/theme/css/lumen/bootstrap.min.css" rel="stylesheet">
+    <link href="/airfile/css/style.css" rel="stylesheet">
+    <link href="/airfile/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+      .sidebar-heading{
+          
+      }
+  </style>
+    
+    </head>
+    <body>
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="basket pull-right">
+                        Ваша корзина {% if Basket.items|length > 0 %}({{Basket.totalHow}}){% endif %}
+                        {% if Basket.items|length > 0 %}
+                        <div class="basket-list" style="display:none">
+                            Последние добавленные товары
+                            <ul class="media-list basket-items" >
+                            {% for item in Basket.items %}
+                              <li class="media">
+                                    <a href="/product/view/{{item.id}}" class="pull-left">
+                                         {% if item.photos|length > 0 %}                                     
+                                                 <img  src="/airdraw/{{item.photos.0.spath}}/50/50" class="media-object" />                                         
+                                         {% else %}
+                                          <img src="/assets/auth/images/noimage/no-img.jpg" class="media-object" />
+                                         {% endif %}
+                                    </a> 
+                                <div class="media-body">
+                                  <h4 class="media-heading" ><a href="/product/view/{{item.id}}">{{item.title}}</a></h4>
+                                  <span style="font-size:17px;">{% if item.how %}{{item.how}}{% else %}1{% endif %} x &nbsp;&nbsp;{{item.price|number_format(0,'.',' ')}} <img src="/assets/shared/img/icons/tenge_white.png" height='13px'/></span>
+                                  
+                                   &nbsp;&nbsp;&nbsp;<a href="/checkout/remove/{{item.id}}" class="btn btn-default btn-xs">Удалить</a>
+                                  
+                                </div>
+                              </li>
+                             {% endfor %}
+                            </ul>
+                            <div class="pull-right" style="margin:10px;">
+                                Общая сумма: <span style="color:#fff; font-size:21px;"> {{Basket.totalSumma|number_format(0,'.',' ')}} <img src="/assets/shared/img/icons/tenge_white.png" height='13px'/></span>
+                            </div>
+                            <div class="">
+                                <div class="btn-group">
+                                    <a href="/checkout/cart" class="btn btn-primary">Открыть корзину</a>
+                                    <a href="/checkout/checkout" class="btn btn-success">Перейти к оплате</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <ul class="links pull-left">
+							<li {% if Page.url == 'o-kompanii' %}class="selected"{% endif %}><a href="/page/o-kompanii">О компании</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;</li>
+							<li {% if Page.url == 'skidki-i-akcii' %}class="selected"{% endif %}><a href="/page/skidki-i-akcii">Скидки и акции</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;</li>
+							<li {% if Page.url == 'kak-zakazat' %}class="selected"{% endif %}><a href="/page/kak-zakazat">Как заказать</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;</li>
+							<li {% if Page.url == 'kak-oplatit' %}class="selected"{% endif %}><a href="/page/kak-oplatit">Как оплатить</a>&nbsp;&nbsp;&nbsp;&#149;&nbsp;&nbsp;&nbsp;</li>
+							<li {% if Page.url == 'dostavka' %}class="selected"{% endif %}><a href="/page/dostavka">Доставка</a></li>
+					</ul>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <br/><br/>
+                    <center>
+					 {% if Shop.logo %}
+                     <a href="/"><img src="{{Shop.logo}}" height="100px" /></a>
+                     {% else %}
+                     <h2><a href="/">{{Shop.title}}</a></h2>
+                     {% endif %}                     
+                     </center>
+                     <br/>
+                 </div>
+             </div>
+        </div>
+    </section>
+    <section id="topmenu">
+        <div class="line-menu">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <ul class="nav nav-pills botline-menu">
+                            <li ><a href="/">Главная</a></li>
+                            <li ><a href="/page/o-kompanii">О компании</a></li>
+                            {% for item in Categories %}
+                              {% if item.childs|length > 0 %}
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                      {{item.title}} <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                      {% for child in item.childs %}
+                                      <li><a href="/catalog/all/{{child.id}}">{{child.title}}</a></li>
+                                      {% endfor %}
+                                    </ul>
+                                  </li>
+                              {% else %}
+                                    <li><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>
+                              {% endif %}
+                            {% endfor %}                            
+                            <li><a href="/page/kontakty">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {#=========================================================================== #}
+    <section id="content">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+            <br/>
+            {% block breadcrumb %}
+                <ol class="breadcrumb">
+                    <li><a href="/">Главная</a></li>
+                    {% for item in Breadcrumb %}
+                    <li><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>                                
+                    {% endfor %}    
+                    <li class="active">{{Catalog.title}}</li> 
+                </ol>  
+            {% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+{# ================================================================================ #}
+        <div class="panel panel-default">
+          <div class="panel-heading">Категории</div>
+          <div class="panel-body">
+          <ul class="left-menu">
+          {% for item in Categories %}
+              {% if item.childs|length > 0 %}
+                <li >
+                    <h5><a  href="/catalog/all/{{item.id}}" style="font-weight:bold">
+                      {{item.title}} <span class="caret"></span>
+                    </a></h5>
+                    <ul style="margin-left:10px">
+                      {% for child in item.childs %}
+                      <li><a href="/catalog/all/{{child.id}}">{{child.title}}</a></li>
+                      {% endfor %}
+                    </ul>
+                    <hr/>
+                  </li>
+              {% else %}
+                    <li ><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>
+              {% endif %}
+            {% endfor %}
+                </ul>
+          </div>
+        </div>
+
+{# ================================================================================ #}
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                {% block contentPage %}{% endblock %}
+            </div>
+        </div>
+        </div>
+    </section>
+    {# ===========================================================================#}
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/airfile/plugins/theme/js/bootstrap.min.js"></script>
+        <script src="/airfile/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+        <script>
+            $(function(){
+                $('.basket').hover(function(){
+                    $('.basket-list').show();
+                }, function(){
+                    $('.basket-list').hide();
+                });
+            });
+        </script>
+        {% block headJS %}{% endblock %}
+    </body>
+</html>

@@ -48,6 +48,22 @@ $(document).ready(function() {
 	})
 
 
+	var owllook = $('.lookbook-carousel .items-carousel').owlCarousel({
+		loop:true,
+		nav:false,
+		items: 3,
+		center:true
+	})
+
+	$('.lookbook-carousel .nav-carousel-prev').click(function() {
+		owllook.trigger('prev.owl.carousel');
+	})
+
+	$('.lookbook-carousel .nav-carousel-next').click(function() {
+		owllook.trigger('next.owl.carousel');
+	})
+
+
 	var owlpr = $('.product .carousel .items-carousel').owlCarousel({
 		loop:true,
 		nav:false,

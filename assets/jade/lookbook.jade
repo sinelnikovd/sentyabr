@@ -1,0 +1,62 @@
+extends ./template/template.jade
+
+block title
+	title Блог текст
+
+block content
+	- var reg = true
+	include ./template/header.jade
+	.lookbook-section-1
+		.container
+			.colums
+				.lookbook-section-1-col-left
+					a(href="#") к списку дизайнеров
+				.lookbook-section-1-col-middle
+					.logo
+						img(src="img/logo-big.png", alt="")
+					h1 khan kuchum
+					p.subtitle Весна-лето 2016
+				.lookbook-section-1-col-right
+					.to_story
+						a(href="#")
+							i.icon.icon-story
+							| в магазин
+	.lookbook-section-2
+		.carousel.lookbook-carousel
+			span.nav-carousel-prev 
+				i.icon.icon-prev
+			.items-carousel
+				.item-carousel
+					img(src="img/lookbook1.png", alt="")
+				.item-carousel
+					img(src="img/lookbook1.png", alt="")
+				.item-carousel
+					img(src="img/lookbook1.png", alt="")
+				.item-carousel
+					img(src="img/lookbook1.png", alt="")
+			span.nav-carousel-next
+				i.icon.icon-next
+	.lookbook-section-3
+		.container
+			.colums
+				.lookbook-section-3-col-left
+					ul.social
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-facebook
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-twitter
+						li
+							a(href="#")
+								i.icon.icon-squaer.icon-squaer-vkontakte
+				.lookbook-section-3-col-right
+					p “It’s about taking her out of urban life and putting her feet on the sand. It’s where I long to be, more and more,” said Phoebe Philo in her debrief about Céline, as dozens of journalists jostled to shove their iPhones in her face. But the background of Céline—its conceptual tented setting, its variety, the storming briskness of her models—cannot be captured in a convenient old-school sound bite about color, silhouette, and theme. Philo rebuilt Céline by trusting her instincts, and by trusting that other women are tuned into the same wavelength. And now she’s getting more outspoken about it. “I am somebody who is interested in how clothes make us feel,” she said, “and in how we behave in different places. I thought, If you were traveling for a year, what would you need to take with you?”
+	.lookbook-section-4
+		.container
+			h2 миниатюры
+	.lookbook-section-8
+		.container
+			include ./template/banner-footer.jade
+
+	include ./template/footer.jade
