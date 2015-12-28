@@ -4,7 +4,7 @@ $(document).ready(function() {
 		$('input[data-inputmask]').mask("+7 (999) 999-99-99");
 	}*/
 
-	$("select[name=color]").closest(".SumoSelect").find(".options li label").html("<span style='bacgrond-color: "+$("select[name=color]").closest(".SumoSelect").find(".options li label").text()+"'></span>")
+
 
 	var owlmain = $('.main-section-2-carousel .items-carousel').owlCarousel({
 		loop:true,
@@ -93,7 +93,12 @@ $(document).ready(function() {
 
 	$('.sumoselect').SumoSelect({placeholder: 'Выберите категорию'});
 
-
+	var colorel = $("select[name=color]").closest(".SumoSelect").find(".options li label");
+	colorel.each(function( index ) {
+		if( index != 0){
+			$( this ).html("<span style=' display: inline-block; width: 20px; height: 20px; background-color: "+ $( this ).text() +"' ></span> цвет");
+		}
+	});
 
 
 });
