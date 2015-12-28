@@ -25,19 +25,19 @@
 				</div>
 				<div class="menu">
 					<ul class="main-menu">
-						<li><a href="#">новое</a></li>
-						<li><a href="#">женщины</a></li>
-						<li><a href="#">мужчины</a></li>
-						<li class="active"><a href="#">дизайнеры</a>
-							<ul>
-								<li><a href="#">Aika Alemi</a></li>
-								<li><a href="#">Alima </a></li>
-								<li><a href="#">Khan Kuchum</a></li>
-								<li><a href="#">Tolegen</a></li>
-								<li><a href="#">Pentatonica</a></li>
-								<li><a href="#">Salta</a></li>
-							</ul><a href="#" class="view-all">смотреть все</a>
-						</li>
+						{% for item in Categories %}
+							{% if item.childs|length > 0 %}
+								<li><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>
+										<ul>
+											{% for child in item.childs %}
+											<li><a href="/catalog/all/{{child.id}}">{{child.title}}</a></li>
+											{% endfor %}
+										</ul><a href="#" class="view-all">смотреть все</a>
+									</li>
+							{% else %}
+										<li ><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>
+							{% endif %}
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
@@ -70,16 +70,21 @@
 				<div class="carousel boottom-carousel">
 					<div class="nav-carousel"><span class="nav-carousel-prev"><i class="icon icon-prev"></i></span><span class="nav-carousel-next"><i class="icon icon-next"></i></span></div>
 					<div class="items-carousel">
-						<div class="item-carousel"><a href="#"><img src="/airfile/img/shmot.png" alt=""><span class="button button-main">смотреть</span></a></div>
-						<div class="item-carousel"><a href="#"><img src="/airfile/img/shmot.png" alt=""><span class="button button-main">смотреть</span></a></div>
-						<div class="item-carousel"><a href="#"><img src="/airfile/img/shmot.png" alt=""><span class="button button-main">смотреть</span></a></div>
-						<div class="item-carousel"><a href="#"><img src="/airfile/img/shmot.png" alt=""><span class="button button-main">смотреть</span></a></div>
+						{% for item in Products %}
+							<div class="item-carousel">
+								<a href="/product/view/{{item.id}}">
+									<img src="/airdraw/{{item.photos.0.spath}}/210/315" alt="{{item.title}}" width="210" height="315">
+									<span href="#" class="button button-main button-black">смотреть</span>
+								</a>
+							</div>
+						{% endfor %}
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <div class="main-section-4">
 	<div class="container">
 		<div class="colums">
@@ -111,7 +116,7 @@
 		<div class="colums">
 			<div class="main-section-5-col-1">
 				<h2>выбор сентября:</h2>
-				<p>минимализм и еще <br>раз минимализм</p><a href="#" class="button button-all">смотреть все</a>
+				<p>минимализм и еще <br>раз минимализм</p><a href="#" class="button button-all button-black">смотреть все</a>
 			</div>
 			<div class="main-section-5-col-2">
 				<div class="image image1"><a href="#"><span>name <br>name</span></a></div>

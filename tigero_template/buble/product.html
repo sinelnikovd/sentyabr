@@ -1,0 +1,259 @@
+{% extends 'base.html' %}
+{% block titlePage %}{{Product.title}}{% endblock %}
+
+{% block desc %}{{Product.short}}{% endblock %}
+{% block keywords %}{{Product.keywords}}{% endblock %}
+
+{% block contentPage %} 
+
+ <div class="product-list">
+            
+    </div>
+    <div class="main_content">
+		<div class="content_wrap">
+		    
+		    {% block breadcrumb %}
+            <ol class="bread_crumbs">
+                <li><a href="/">Главная</a></li>
+                {% for item in Product.ctgsList %}    
+                {% if loop.index == 1 %}            
+                    {% for bread in item.breadcrumb %}
+                    <li><a href="/catalog/all/{{bread.id}}">{{bread.title}}</a></li>                                
+                    {% endfor %}
+                    <li><a href='/catalog/all/{{item.id}}'>{{item.title}}</a></li>
+                {% endif %}
+                {% endfor %}    
+                <li class="active">{{Product.title}}</li> 
+            </ol>  
+            {% endblock %}
+		
+			<div class="product_block clearfix">
+				<p class="title_single_block right">{{Product.title}}</p>
+				<div class="slider_block left">
+					<div class="img">
+						<div class="slides_wrap"></div>
+						<div class="thumbs_sl clearfix">
+							{% if Product.photos|length > 0 %}                                     
+                                      {% for photo in Product.photos %}
+                                        {#% if loop.index > 1 %#}
+                                          
+                                              <img alt="" src="/airdraw/{{photo.spath}}/570/470"  height="70" width="70" style="margin:5px;"/>
+                                          
+                                        {#% endif %#}
+                                        {% endfor %}                                    
+                             {% else %}
+                              <img alt="" src="/assets/auth/images/noimage/no-img.jpg" class="product-image" width="242" height="179"/>
+                             {% endif %}    
+						</div>
+					</div>
+				</div>
+				<div class="descr_block right clearfix standard_listing">
+					<div class="separator"></div>
+					<p class='article'>Артикул: № {{Product.articul}}</p>
+
+					<div class="clearfix text_align ">
+						<div class="buy_form left pos_rel">
+						<form>
+							<p class="price">{{Product.price|number_format(0,'.',' ')}} тг. 
+							    {% if Product.prc > 0 %}
+							        <span>{{ Product.new_price }} тг.</span>
+							    {% endif %}
+							</p>
+							
+							{% for item in Product.paramsList %}
+								{% if item.paramInfo.title == 'Размер' or item.paramInfo.title == 'Размеры' %}
+								
+								
+								<select name="size" id="sizeProduct">
+									{% set foo = item.valueInfo.title|split(',') %}
+									{% for valtitle in foo %}
+										<option value='{{valtitle|trim}}'>Размер: {{valtitle|trim}}</option>
+									{% endfor %}
+								</select>
+								
+								{% endif %}
+							{% endfor %}
+							
+							{% for item in Product.paramsList %}
+								{% if item.paramInfo.title == 'Цвет' or item.paramInfo.title == 'Цвета' %}
+
+								<select name="color" id="colorProduct">
+									{% set foo = item.valueInfo.title|split(',') %}
+									{% for valtitle in foo %}
+										<option value='{{valtitle|trim}}'>Выбор цвета: {{valtitle|trim}}</option>
+									{% endfor %}
+								</select>
+								
+								{% endif %}
+							{% endfor %}
+								{% for item in Product.paramsList %}
+								<div style="color:#494052; margin-bottom:10px">
+								  <strong>{{ item.paramInfo.title }}</strong>: {{item.valueInfo.title}}
+								 </div>
+								
+							{% endfor %}
+							<script>
+							    function  goAdd(id_item){
+                                   var params = {};  // <- initialize an object, not an array
+                            
+                                    params['Цвет'] = $('#colorProduct').val();
+                                    params['Размер'] = $('#sizeProduct').val();
+                                     var out = JSON.stringify(params);
+                                    //var out = "{Цвет:"+COLORSELECTED+",Размер: "+SIZESELECTED+"}";
+                                   document.location.href = '/checkout/add/'+id_item+'?params='+out;
+                               }
+							</script>
+		                    <a href='javascript:goAdd({{Product.id}})' class="add_cart"  id_book="{{Product.id}}">Добавить в корзину</a>
+		                    
+		                    <button class="fast_buy red_btn" type="submit">быстрая покупка</button>
+		                    
+		                    <button class="add_my_desires" type="button" data-surl="http://{{Shop.HOST}}{{Shop.URL.path}}">
+		                       <span class="icon"><i class="fa fa-heart"></i></span>
+		                        Добавить в мои желания
+		                    </button>
+		                    
+		                    <div class="pluso_wrap" style="text-align:center; padding-top:30px;">
+    						<script type="text/javascript">(function() {
+                              if (window.pluso)if (typeof window.pluso.start == "function") return;
+                              if (window.ifpluso==undefined) { window.ifpluso = 1;
+                                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                                s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+                                s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+                                var h=d[g]('body')[0];
+                                h.appendChild(s);
+                              }})();</script>
+                            <div class="pluso" data-background="#ebebeb" data-options="small,square,line,horizontal,counter,theme=07" data-services="vkontakte,odnoklassniki,facebook,twitter,google,moimir"></div>
+                            </div>
+                        </form>
+                        <form class="fast_buy popop_form" action="/mail/sendme">
+	                        <div class="close_btn"></div>
+	                        <p class="tit">
+	                            Оставьте Ваш номер
+                                телефона и наш оператор
+                                свяжется с Вами!
+                            </p>
+                            <input type="hidden" name="mail[title]" value="Быстрая покупка" />
+                            <input type="hidden" placeholder="Ваше имя" name="mail[name]" value="Потенциальный покупатель">
+                            <input type="hidden" name="mail[content]" value="Покупатель хочет купить товар" />
+                            <input type="text" placeholder="Ваш номер телефона" name="mail[contact]">
+                            <button class="red_btn" type="submit">оформить заказ</button>
+	                    </form>
+						</div>
+						
+						<div class="advantage right">
+							<p class="title_ub title">Лучшее качество</p>
+							<div class='write_separator'></div>
+							<div class="descr">
+								<p>
+									Купить {{Product.title}}
+									в интернет-магазине shop.pandaland.kz
+									очень просто — Вам достаточно
+									оформить заказ онлайн на сайте
+									или по телефону <span class="bold">+7(727)2969750</span>
+								</p>
+								<p>
+									Мы доставим вам {{Product.title}} в самое короткое
+									время.
+							</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="descr_reviews_block">
+						<p class="toggle title_ub">
+							<a href="javascript:void(0);" class="selected review-nav" data-id="content-desc">Описание</a> <a href="javascript:void(0);" data-id="content-reviews" class="review-nav" >Отзывы ({{ Reviews|length }})</a>
+							
+						</p>
+						<div class="descr reviews_block" id="content-desc">
+							{#% for item in Product.paramsList %}
+								{% if item.paramInfo.title != 'Размер' or item.paramInfo.title != 'Возраст' %}
+								<p>
+									<span class="bold">{{item.paramInfo.title}}:</span> {{item.valueInfo.title}}
+								</p>
+								{% endif %}
+							{% endfor %#}
+							
+							{% for item in Product.attrsList %}
+							<p>
+								<span class="bold">{{item.attrInfo.title}}:</span> {{item.valueInfo.title}}
+							</p>
+							{% endfor %}
+							
+							<div class="text">
+								{% autoescape false %}
+								{{Product.full}}
+								{% endautoescape %}
+							</div>
+						</div>
+						<div class="reviews-back  reviews_block" id="content-reviews" style="display:none">
+						<br/>
+						    <div class="write_to_us" style="width:100%">
+                		        <p class="title_single_block">Написать отзыв</p>
+                				<div class="separator"></div>
+                				<br/>
+                				<form style="width:auto" method="post">
+                					<input type="text" placeholder="Ваше имя" name="Reviews[name]" value="{{ClientInfo.email}}" >
+                					<textarea placeholder="Текст сообщения" name="Reviews[msg]" style="height:80px"></textarea>
+                					<button class="red_btn" type="submit">отправить</button>
+                				</form>
+                			</div>
+                			{% for item in Reviews %}
+                			<br/><br/>
+                			<div class="write_to_us" style="width:100%">
+                		        <p class="title_single_block">{{ item.sname|default('Без имени') }}</p>
+                		        {% if AuthUser %}<a onclick="if (confirm('Вы уверены?')){return true;}else{return false;}" href="?rdel={{item.id}}">Удалить отзыв</a>{% endif %}
+                				<div class="separator"></div>
+                				<br/>
+                                {{ item.sbody }}
+                			</div>
+                			{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+            {% if SimilarItems|length > 1 %}
+			<div class='similar_product_block'> 
+				<div class="carousel" data-desctop-num="4" data-pad-num="4" data-mobil-num="4"> 
+    				<div class="title_ub clearfix">
+    					Похожие товары
+    					<div class="switch">
+    					    <span class="carousel-button-left"></span> 
+    					    <span class="carousel-button-right"></span> 
+    					</div>
+    				</div>
+			        <div class="carousel-wrapper "> 
+					  <div class="carousel-items"> 
+					   {% for item in SimilarItems %} 
+					   {% if item.id != Product.url %}
+					    <div class="carousel-block it_product">
+					    		<div class="img_block">
+					    		<a href="/product/{{item.id}}">
+					    			  {% if item.photos|length > 0 %}                              
+                                         <img src="/airdraw/{{item.photos.0.spath}}/128/106" alt=""  />
+                                         {% else %}
+                                          <img  class="product-image" src="/assets/auth/images/noimage/no-img.jpg" alt="" width="128" height="106"/>                                  
+                                         {% endif %}
+					    			</a>
+					    		</div>
+					    		<div class="descr_block">
+					    			<p class="title"> <a href="/product/{{item.id}}">{{item.title}}</a></p>
+					    			<p class="price">{{item.price|number_format(0,'.',' ')}} <span>тг.</span></p>
+					    			<div class="separator_min"></div>
+					    			<a  class="add_cart" href="/checkout/add/{{item.id}}">Добавить в корзину</a>
+					    		</div>
+					    	</div>
+					    {% endif %}
+    					{% endfor %}
+					   </div>
+				    </div>
+    			</div>
+						                        
+				
+			</div>
+			{% endif %}
+		</div>
+	</div>
+  <div class="clearfix"></div>   
+  <br/><br/><br/>
+{% endblock %}

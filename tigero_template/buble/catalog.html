@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+
+{% block titlePage %}{% if Catalog.seo_title %}{{ Catalog.seo_title}}{% else %}Категория "{{Catalog.title}}"{% endif %}{% endblock %}
+{% block desc %}{{ Catalog.seo_key }}{% endblock %}
+{% block keywords %}{{ Catalog.seo_dscr }}{% endblock %}
+{% block contentPage %}   
+
+
+<div class="main_content">
+    <div class="catalog_wrap">
+		<div class="content_wrap clearfix">
+			<div class="mobil_bread_crumbs">
+				<div class="bread_crumbs">
+				 <ul class="clearfix">
+                        <li><a href="/">Главная</a></li>
+                        {% for item in Breadcrumb %}
+                        <li><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>                                
+                        {% endfor %}    
+                        <li class="active">{{Catalog.title}}</li> 
+                    </ul> 
+				
+				</div>
+			</div>
+			<form class="filter_block left active" method="get">
+				<p class="title_ub">Фильтр товаров</p>
+
+				<div style="display: block;" class="filter_hidden">
+					<div class="sep_wrap">
+						<span>По цене</span>
+						<div class="write_separator"></div>
+					</div>
+				
+					
+					<input type="hidden" name="f_from" value="{{f_from|default(0)}}" data-min="{{PriceList.min|default(0)}}" />
+					<input type="hidden" name="f_to" value="{{f_to|default(0)}}" data-max="{{PriceList.max|default(50000)}}" />
+					<div id="slider-range"></div>
+					 
+					
+					{% for item in ParamsList %}
+					<div class="sep_wrap">
+						<span>{{ item.name }}</span>
+						<div class="write_separator"></div>
+					</div>
+                    
+                    {#<div class="checkbox_block clearfix">
+						<label><input type="checkbox">Все</label>
+						<label><input type="checkbox">2 года</label>
+						<label><input type="checkbox">2 года</label>
+						<label><input type="checkbox">2 года</label>
+						<label><input type="checkbox">2 года</label>
+						<label><input type="checkbox">2 года</label>
+						<label><input type="checkbox">2 года</label>
+					</div>#}
+                    
+                    <ul class="checkbox_block clearfix" style="list-style-type:none; margin:0px; padding:0px">
+                        {% for val in item.vals %}
+                            <li style="display:inline-block; padding:7px">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="f[{{item.id}}][]" value="{{val.id}}" {% if val.isChecked %}checked="checked"{% endif %}> {{ val.value }}
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+					
+					<p style="margin-top:25px">
+						<button type="submit" class="title_ub border">Отфильтровать</button>
+					</p>
+					<div class="write_separator"></div>
+					<p>
+						<button type="reset" class="title_ub border">сбросить</button>
+					</p>
+				</div>
+			</form>
+			<div class="catalog_block right">
+    			{% block breadcrumb %}
+    			<div class="bread_crumbs"> 
+                    <ul>
+                        <li><a href="/">Главная</a></li>
+                        {% for item in Breadcrumb %}
+                        <li><a href="/catalog/all/{{item.id}}">{{item.title}}</a></li>                                
+                        {% endfor %}    
+                        <li class="active">{{Catalog.title}}</li> 
+                    </ul> 
+                </div>
+                {% endblock %}
+                {% if Products|length > 0 %}
+    				<div class="units clearfix">
+    				    {% for item in Products %} 
+    					<div class="item">
+    						<a href="/product/{{item.id}}">
+                                 {% if item.photos|length > 0 %}                              
+                                         <img src="/airdraw/{{item.photos.0.spath}}/420/347" alt=""  />
+                                 {% else %}
+                                  <img  class="product-image" src="/assets/auth/images/noimage/no-img.jpg" alt=""/>                                  
+                                 {% endif %}
+                             </a> 
+                             
+    						<div class="add_cart_block">
+    						    <p class="title">
+    						        <a href="/product/{{item.id}}">{{item.title}}</a>
+    						    </p>
+    							<div class="separator"></div>
+    							<div class="clearfix">
+    							    <p class="price clearfix">
+    							        {% if item.prc > 0 %}
+        						            <span class="left" style="margin-top:0;">{{ item.new_price|number_format(0,'.',' ') }} тг.</span>
+        						       {% endif %}
+        						       {% if item.prc > 0 %}<i class="right">{% endif %}
+        						        {{item.price|number_format(0,'.',' ')}} тг.
+        						       {% if item.prc > 0 %} </i>{% endif %}
+        						        
+        						    </p>
+                                    
+    							</div>
+    							<p><a class='add_cart btn btn-primary' href="/checkout/add/{{item.id}}"  role="button">в корзину</a> </p>
+    						</div>
+    					</div>
+    					{% endfor %}
+    				</div>
+    			{% else %}
+    			    <div>В данной категории нет товаров</div>
+    			{% endif %}
+    			
+			<center>
+		    <!--noindex-->
+		    {% if Pages.pages > 1 %}
+			<div class="show_more">
+                <ul class="pagination ">
+               {% if Pages.current > 1 %}                             
+                    <li><a href="/catalog/{{Catalog.id}}?p={{Pages.current-1}}&h={{Pages.how}}{% if ParamsURL %}&{{ParamsURL}}{% endif %}{% if SEARCH %}&q={{SEARCH}}{% endif %}" tabindex="0" class="" >Назад</a></li>
+                {% endif %} 
+                
+                    {% for page in 1..Pages.pages %}   
+                        {% if (Pages.current - loop.index)|abs < 10 %}
+                       <li class="{% if page == Pages.current %}active{% else %}{% endif %}"> <a href="/catalog/{{Catalog.id}}?p={{page}}&h={{Pages.how}}{% if ParamsURL %}&{{ParamsURL}}{% endif %}{% if SEARCH %}&q={{SEARCH}}{% endif %}" tabindex="0" >{{page}}</a></li>                            
+                        {% endif %}
+                    {% endfor %}  
+            
+                {% if Pages.current < Pages.pages %}                                                          
+                    <li><a href="/catalog/{{Catalog.id}}?p={{Pages.current+1}}&h={{Pages.how}}{% if ParamsURL %}&{{ParamsURL}}{% endif %}{% if SEARCH %}&q={{SEARCH}}{% endif %}" tabindex="0" class=" " >Вперед</a></li>
+                {% endif %}
+                </ul>
+             <div style="clear:both"></div>
+                <div class="dataTables_info" id="DataTables_Table_0_info">Показано 
+                    c {{ (Pages.how*Pages.current)-(Pages.how-1) }}
+                    по {% if (Pages.how*Pages.current) >= Pages.max %}{{Pages.max}}{% else %}{{ Pages.how*Pages.current }}{% endif %}
+                    из {{Pages.max}} товара(-ов)
+                </div>
+            </div>
+                
+                {% endif %}
+                <!--/noindex-->
+			</center>
+			<p>
+			{% autoescape false %}{{ Catalog.desc }}{% endautoescape %}
+			</p>
+			</div>
+			
+		</div>
+	</div>
+</div>
+{% endblock %}

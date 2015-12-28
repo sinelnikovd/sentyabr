@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {#<meta name="description" content="{{Shop.desc}}">#}
+        <meta name="description" content="{% block desc %} Интернет-магазин детских товаров Pandaland с доставкой товаров по Казахстану. Огромный выбор детских игрушек, косметики, детской мебели, рюзкаков и ранцев, средств гигиены и товаров для новорожденных. Brother Max, California Baby, Fisher-Price, Woody, Sevenths Generation.{% endblock %}">
+        <meta name="keywords" content="{{Shop.keywords}}{% block keywords %}{% endblock %}">
+        <meta name="author" content="{{Shop.author}}">
+    
+        <title>{% block titlePage %}{% endblock %} &mdash; {{Shop.title}}</title>
+        
+    
+    <link rel="stylesheet" type="text/css" href="/airfile/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/airfile/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/airfile/css/bg.css" />
+	<link rel="stylesheet" type="text/css" href="/airfile/css/styles_menu.css" />
+	<link rel="stylesheet" type="text/css" href="/airfile/css/responsive.css" />
+	
+
+
+    
+	<script src="/airfile/js/jquery.js"></script>
+	<script src="/airfile/js/jquery-ui.min.js"></script>
+	<script src="/airfile/js/jquery.ui.touch.js"></script>
+	<script src="/airfile/js/jquery.selectbox.js"></script>
+	<script src="/airfile/js/carousel.js"></script>
+	<script src="/airfile/js/custom.js"></script>
+	<script src="/airfile/js/js_menu.js"></script>
+
+
+  <script>
+      function goSubscribe(){
+            var email = $('#subscribe-email').val();
+            $('#subscribe-panel').html('Спасибо за подписку!').css('padding-right', '9px');
+            $.post('/checkout/subscribe',{'email':email}, function(){
+                
+            });
+        }
+  </script>
+    
+    </head>
+    <body>
+
+
+    <div class="main_header">
+        <div class="content_wrap clearfix">
+            <div class="login_wrap clearfix right">
+                <div class="open_nav_btn">
+                    <i class="fa fa-bars"></i>
+                </div>
+                {#
+                 <a href="/checkout/checkout" class="clearfix wrap_cart">
+                    <div class="main_icon left">
+                        {% if Basket.items|length > 0 %}{{Basket.totalHow}} {% else %} 0 {% endif %}
+                        <span class="cart_icon"></span>
+                    </div>
+                    <div class="text right">
+                        <p class="cart_title">Корзина</p>
+                    </div>
+                </a>  
+                <a href="/cabinet/wishlist" class="wish_list">
+                    лист желаний
+                    <span class="icon"></span>
+                </a> #}
+                <!--noindex-->
+                <div class="mobil_icon_block">
+                    <a href="/checkout/checkout" rel="nofollow"><span style="color:#222">В корзине: {% if Basket.items|length > 0 %}{{Basket.totalHow}} {% else %} 0 {% endif %} ед.</span></a>
+                    <a href="/checkout/checkout"   rel="nofollow" class='cart_btn'></a>
+                    
+                    <a href="/cabinet/wishlist"  rel="nofollow" class='desired_list_btn'></a>
+                    <a class="searh_btn">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </div>
+                <!--/noindex-->
+                <!--noindex-->
+                <form action="/catalog/search" class="search right">
+                    <input type="text" name="q" placeholder="введите текст для поиска">
+                    <button>
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+                <!--/noindex-->
+                {% if ClientInfo %}
+                 <div class="login right">
+                    <a class="main_btn" href="/cabinet">Войти в {{ClientInfo.email}}</a>
+                </div>
+                {% else %}
+                <div class="login right">
+                    <a class="main_btn" href="javascript:void(0);">Войти</a>
+                    <div class="popop_form login clearfix">
+                        <div class="close_btn"></div>
+                        <form class="left" action="/cabinet/login">
+                            <input type="text" placeholder="Логин" name="email">
+                            <input type="password" placeholder="Пароль" name="pwd">
+                            <label>Запомнить пароль <input type="checkbox" checked name="remember" value="true"/></label>
+                            <p class='forgot_password'>
+                                <a href="/cabinet/restore">Забыли пароль ?</a>
+                            </p>
+                            <button class="blue_btn" type="submit">войти</button>
+                        </form>
+                        <div class="right">
+                            <p class="title">Первый раз в нашем магазине?</p>
+                            <p class='descr'>Зарегистрируйтесь и получите доступ к расширенным возможностям сайта!</p>
+                            <a href="javascript:void(0);" class="blue_btn click_reg">зарегистрироваться</a>
+                        </div>
+                    </div>
+
+                    <div class="popop_form reg clearfix">
+                        <div class="close_btn"></div>
+                        <form action="/cabinet/regin" method="post" >
+                            <div class="clearfix">
+                                <input class="left" type="text" placeholder="Ваш E-mail" name="info[email]">
+                                <input  type="hidden"  name="info[surname]" value="-">
+                                <input  type="hidden"  name="info[name]" value="-">
+                                <input  type="hidden"  name="info[contacts]" value="-">
+                                <input  type="hidden"  name="info[regin]" value="ok">
+                                
+                                <p class="left"> 
+                                <input class="left" type="password" placeholder="Пароль" name="info[pwd]" style="width: 160px;"><br/>
+                                </p>
+                            </div>
+                            <p>Используется как логин для <br> входа в систему.</p>
+                            <button class="blue_btn" type="submit">зарегистрироваться</button>
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+           <ul class="main_nav left">
+                <li {% if Page.url == 'dostavka' %}class="selected"{% endif %}><a href="/page/dostavka">Доставка</a></li>
+                <li {% if Page.url == 'obmen' %}class="selected"{% endif %}><a href="/page/obmen">Обмен и возврат</a></li>
+                <li {% if Page.url == 'oplata' %}class="selected"{% endif %}><a href="/page/oplata">Методы оплаты</a></li>
+                <li {% if Page.url == 'faq' %}class="selected"{% endif %}><a href="/page/faq">Часто задаваемые вопросы</a></li>
+                <li {% if Page.url == 'kontakti' %}class="selected"{% endif %}><a href="/page/kontakti">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+    
+<div class="header">
+    <div class="content_wrap">
+        <div class='header_content clearfix'>
+            <div class="logo left">
+                {% if Shop.logo %}
+                <a href="/">
+                    <img alt="" src="{{Shop.logo}}" />
+                    <p class="text_logo">Интернет-магазин детских товаров</p> 
+                </a>
+                {% else %}
+                <h2><a href="/">{{Shop.title}}</a></h2>
+                {% endif %} 
+            </div>
+
+            <div class="contact_block left clearfix">
+                <div class="phone left">
+                    <p><span>+7(727)</span> 296 97 50</p>
+                    <p><span>+7(771)</span> 848 88 69</p>
+                </div>
+
+                <div class="contact left">
+                    <div class="popop_form phone_pop clearfix">
+                        <div class="close_btn"></div>
+                        <form action="/mail/sendme">
+                            <input type="hidden" name="mail[name]" value="Посетитель интернет-магазина" />
+                            <input type="hidden" name="mail[content]" value="Посетитель интернет-магазина заказал звонок. Перезвоните по возможности." />
+                            <input type="hidden" name="mail[title]" value="Заказать звонок" />
+                            <input type="text" placeholder="Ваш номер телефона" name="mail[contact]">
+                            <p>Оставте Ваш номер и мы обязательно свяжемся с Вами!</p>
+                            <button class="blue_btn" type="submit">Заказать звонок</button>
+                        </form>
+                    </div>
+                    <p>
+                        <a href="/page/kontakti">Написать нам</a>
+                    </p>
+                    <p>
+                        <a class="request_call" href="#">Заказать звонок</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="cart_block right ">
+                <a href="/checkout/checkout" class="clearfix wrap_cart">
+                    <div class="main_icon left">
+                        {% if Basket.items|length > 0 %}{{Basket.totalHow}} {% else %} 0 {% endif %}
+                        <span class="cart_icon"></span>
+                    </div>
+                    <div class="text right">
+                        <p class="cart_title">Корзина</p>
+                    </div>
+                </a>  
+                <a href="/cabinet/wishlist" class="wish_list">
+                    лист желаний
+                    <span class="icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav_content_wrap">
+        <div class="mobil_menu_btn">
+            <span class='icon'><i class="fa fa-bars"></i></span>
+			<span class="text in_bl">Каталог товаров</span>
+		</div>
+        
+        
+         <div class="bg_block">
+            <div class="content_wrap clearfix">
+            <div class="nav_popup">
+                {% for item in Categories %}
+                {% if item.title != 'Акции' %}
+                  {% if item.childs|length > 0 %}
+                        <div data-nav_content="{{item.id}}" class="text clearfix">
+                             <p class="mobil_cat" >
+                                <a  href="">
+                                  {{item.title}} <span class="triangle"><i class="fa fa-caret-right"></i></span>
+                                </a>
+                            </p>
+                            
+                                {% if item.photo_banner|length > 0 %}
+                                    <div class="bg" data-bg-id="{{item.id}}">
+                                        <a href="{{item.href}}"><img src="/airdraw/{{item.photo_banner.spath}}/540/320" alt=""  /></a>
+                        			</div>
+                			    {% endif %}
+                			
+                            <ul class="menu2lvl">
+                              {% for child in item.childs %}
+                                    <li>
+                                        <a href="/catalog/{{child.id}}">
+                                            <span class="triangle"></span>
+                                            {{child.title}}
+                                        </a>
+                                        {% if child.childs|length > 0 %}
+                                            <ul class="menu3lvl">
+                                                {% for childss in child.childs %}
+                                                    <li>
+                                                        <a href="/catalog/{{childss.id}}">
+                                                            <span class="triangle"></span>
+                                                            {{childss.title}}
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                                <li class="all_link">
+                                                    <a href="/catalog/{{child.id}}">
+                                                        Все товары <span class="triangle"></span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        {% endif %}
+                                    </li>
+                              {% endfor %}
+                                <li class="all_link">
+                                    <a  href="/catalog/{{item.id}}">
+                                        Все товары <span class="triangle"></span>
+                                    </a>
+                                </li>
+                             </ul>
+                        </div>
+                    {% else %}
+                        <div class="text clearfix">
+                            <p class="mobil_cat" data-nav_content="{{item.id}}">
+                                <a  href="/catalog/{{item.id}}" >
+                                  {{item.title}}
+                                </a>
+                            </p>
+                        </div>
+                  {% endif %}
+                  
+                   {% endif %}
+                {% endfor %}
+            </div>
+            
+            {% for item in Categories %}
+                {% if item.photo_banner|length > 0 %}
+                    <div class="bg" data-bg-id="{{item.id}}">
+                        <a href="{{item.href}}"><img src="/airdraw/{{item.photo_banner.spath}}/540/320" alt=""  /></a>
+        			</div>
+			    {% endif %}
+			{% endfor %}
+			</div>
+        </div>
+        
+        
+        <div class="content_wrap clearfix">
+            <ul class="nav_content clearfix">
+        
+              {% for item in Categories %}
+              {% if item.title != 'Акции' %}
+                  {% if item.childs|length > 0 %}
+                  
+                    
+                    <li class="parent" data-menu-id="{{item.id}}" data-nav_content="{{item.id}}">
+                        <a  href="/catalog/{{item.id}}">
+                          {{item.title}} <span class="triangle"><i class="fa fa-caret-right"></i></span>
+                        </a>
+                    </li>
+                    
+                  {% else %}
+                    <li class="hide_menu" data-nav_content="{{item.id}}">
+                        <a  href="/catalog/{{item.id}}"  >
+                          {{item.title}} <span class="triangle"><i class="fa fa-caret-right"></i></span>
+                        </a>
+                    </li>
+                  {% endif %}
+              {% endif %}
+              
+            {% endfor %}
+                <!--<li class="disсounts_cat">
+                    <a  href="/page/shares">
+                      Акции <span class="triangle"><i class="fa fa-caret-right"></i></span>
+                    </a>
+                </li>
+                -->
+            </ul>
+        </div>
+    </div>
+</div>  
+
+	
+
+{% block contentPage %}{% endblock %}
+	
+		
+
+        {% block headJS %}{% endblock %}
+        
+        <div class="footer">
+        	<div class="content_wrap clearfix">
+        		<div class="logo_block left">
+        			<div class="logo ">
+        				<img src="/airfile/logo.png" alt="">
+        			</div>
+        			<div class="text_logo ">
+        				Интернет-магазин детских товаров
+        			</div>
+        			<div class="address_footer">
+        			    Проспект Сейфуллина 498 <br>
+                        (угол Богенбай Батыра), ТЦ <br>
+                        "Fashion Avenue", бутик 20. 
+        			</div>
+        		</div>
+        
+        		<ul class="nav the_1 clearfix left">
+            		<li {% if Page.url == 'dostavka' %}class="selected"{% endif %}>
+            			<span class="triangle"></span>
+            	    	<a href="/page/dostavka">Доставка</a>
+            	    </li>
+                    <li {% if Page.url == 'obmen' %}class="selected"{% endif %}>
+                    	<span class="triangle"></span>
+                        <a href="/page/obmen">Обмен и возврат</a>
+                    </li>
+                    <li {% if Page.url == 'oplata' %}class="selected"{% endif %}>
+                    	<span class="triangle"></span>
+                        <a href="/page/oplata">Методы оплаты</a>
+                    </li>
+                    <li {% if Page.url == 'faq' %}class="selected"{% endif %}>
+                    	<span class="triangle"></span>
+                        <a href="/page/faq">Часто задаваемые вопросы</a>
+                    </li>
+                    <li {% if Page.url == 'kontakti' %}class="selected"{% endif %}>
+                    	<span class="triangle"></span>
+                        <a href="/page/kontakti">Контакты</a>
+                    </li>
+                 </ul>  
+        			
+            <!--noindex-->
+        		<div class="soc_block left">
+        			<ul class="payment_sys clearfix">
+        				<li><img src="/airfile/images/p1.jpg" alt="" /></li>
+        				<li><img src="/airfile/images/p2.jpg" alt="" /></li>
+        				<li><img src="/airfile/images/p3.jpg" alt="" /></li>
+        				<li><img src="/airfile/images/p4.jpg" alt="" /></li>
+        				<li><img src="/airfile/images/p5.jpg" alt="" /></li>
+        				<li><img src="/airfile/images/p6.jpg" alt="" /></li>
+        				<li><img src="/airfile/images/p7.jpg" alt="" /></li>
+        			</ul>
+        		</div>
+        <!--/noindex-->
+        		<div class="subscribe_block right">
+        			<p class="text">
+        				Подписаться на новости
+        				нашего интернет магазина
+        			</p>
+        			<div class="form_block" id="subscribe-panel">
+        				<form>
+        					<input placeholder="Введите e-mail" id="subscribe-email" type="text">
+        					<a href="javascript:goSubscribe()">ok</a>
+        				</form>
+        			</div>
+        		    <div class="we_instargramm">
+        		        <p>Мы в инстаграмме</p>
+        		        <p><a href="https://instagram.com/pandalandshop.kz/" target="_blank">@pandalandshop.kz</a></p>
+        		    </div>
+        		</div>
+        	</div>
+        	<center><br><br>
+  Сайт сделан на площадке 
+  <a href="http://tigero.kz" target="_blank" style="color:#e21e24">TigeroEngine</a></center>
+        </div>
+        
+      
+        
+        {% if ClientInfo %}
+            <div id="overlay"></div>
+        {% else  %}
+            {#
+            {% if Page.title == 'Акции' or Page.title == 'акции' %}
+             <div id="overlay" style="display:block;"></div>
+             <div class="popup_action">
+                <div class="close_popup"></div>
+                <div class="bad_news_for_you">
+                    <p>К сожалению, раздел Акции
+                    доступен только после 
+                    регистрации.</p>
+                    
+                    <p>Сейчас Выс перенаправит
+                    на гланую страницу нашего
+                    магазина!</p>
+
+                </div>
+                 <div class="pop_content">
+                     <ul>
+                         <li>Грандиозные скидки до 90%</li>
+                         <li>Доставка на следующий день по г. Алматы</li>
+                         <li>Новый скидочный товар ЕЖЕНЕДЕЛЬНО</li>
+                     </ul>
+                     
+                     <form action="/cabinet/login" class="login_form_pop">
+                        <p class="inf_p">
+                            Чтобы попасть в раздел АКЦИИ<br> нужно ввесли логин и пароль
+                        </p>
+                        <p><input type="text" placeholder="Логин" name="email"></p>
+                        <p><input type="password" placeholder="Пароль" name="pwd"></p>
+                        <p style="font-size:12px;"><input type="checkbox" checked name="remember" value="true"/> Запомнить <span class="call_recover_form">Восстановить пароль</span></p>
+                        <button class="blue_btn" type="submit">войти</button>
+                    </form>
+                     
+                     <form action="/cabinet/restore" class="recover_form_pop">
+                        <p class="inf_p">
+                            Чтобы восстановить пароль введите<br>Ваш e-mail.
+                        </p>
+                        <p><input type="text" placeholder="E-mail" name="email"></p>
+                        <button class="blue_btn" type="submit">Восстановить</button>
+                    </form>
+                    
+                    <form action="/cabinet/regin" method="post" class="reg_form_pop" >
+                        <div class="clearfix">
+                        <p class="inf_p">
+                            Чтобы попасть в раздел АКЦИИ<br> нужно зарегистрироваться!
+                        </p>
+                            <p><input type="text" placeholder="Ваш E-mail" name="info[email]"></p>
+                            <input  type="hidden"  name="info[surname]" value="-">
+                            <input  type="hidden"  name="info[name]" value="-">
+                            <input  type="hidden"  name="info[contacts]" value="-">
+                            <input  type="hidden"  name="info[regin]" value="ok">
+                            
+                            <p> 
+                            <input type="password" placeholder="Пароль" name="info[pwd]">
+                            </p>
+                        </div>
+                        <button class="blue_btn" type="submit">зарегистрироваться</button>
+                        <div class="registered_">Уже зарегистрированы?</div>
+                    </form>
+                    
+                 </div>
+             </div>
+             {% else %}
+             <div id="overlay"></div>
+             
+             <div class="popup_action recover_pass">
+                <div class="close_popup"></div>
+                <div class="bad_news_for_you">
+                    <p>К сожалению, раздел Акции
+                    доступен только после 
+                    регистрации.</p>
+                    
+                    <p>Сейчас Выс перенаправит
+                    на гланую страницу нашего
+                    магазина!</p>
+
+                </div>
+                 <div class="pop_content">
+                     <ul>
+                         <li>Грандиозные скидки до 90%</li>
+                         <li>Доставка на следующий день по г. Алматы</li>
+                         <li>Новый скидочный товар ЕЖЕНЕДЕЛЬНО</li>
+                     </ul>
+                     
+                     <form action="/cabinet/restore" class="recover_form_pop" style="display:block;">
+                        <p class="inf_p">
+                            Чтобы восстановить пароль введите<br>Ваш e-mail.
+                        </p>
+                        <p><input type="text" placeholder="E-mail" name="email"></p>
+                        <button class="blue_btn" type="submit">Восстановить</button>
+                    </form>
+                 </div>
+             </div>
+             {% endif %}
+             #}
+        {% endif %}
+       
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter33031389 = new Ya.Metrika({id:33031389,
+                    webvisor:true,
+                    clickmap:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/33031389" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69355378-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    </body>
+</html>
