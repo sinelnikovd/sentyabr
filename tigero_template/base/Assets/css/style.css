@@ -1,0 +1,117 @@
+body{
+	background-image:url('{{b_image}}');
+	background-color:{{b_color}};
+	color:{{t_main_color}};
+}
+h1, h2, h3, h4, h5, h6 {
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: "Verdana regular", sans-serif;
+}
+a{
+	color:{{t_href_color}};
+}
+h1{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+h3.product-title{
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    padding-bottom:10px;
+}
+.product-price-number{
+    font-size:17px;
+}
+    ul, ol {
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+    }
+    ul.links{
+        line-height: 40px;
+        color: #363636;
+    }
+    ul.links li.selected a{
+        color:#fa6956;
+    }
+    ul.links li a{
+        color:#363636;
+        font-size:12px;
+    }
+    ul.links li a:hover{
+        border-bottom:1px solid;
+        text-decoration:none;
+    }
+    ul.links li{
+        display: inline-block;
+        margin:0px; padding:0px;
+    }
+    .line-menu{
+        margin-top:20px;
+        border-top:1px solid #363636;
+    }
+    .botline-menu{
+        border-bottom:1px solid #CFCFCF;
+    }
+    .nav-pills li a{
+        font-size:12px;
+        color:#363636;
+        font-family: "verdana regular", sans-serif;
+        text-transform: uppercase;
+        line-height: 25px;
+    }
+    a:hover, .links li a:hover, .nav-pills li a:hover{
+        color:#fa6956;
+    }
+    .breadcrumb, .breadcrumb a{
+        font-size:12px;
+    }
+    .breadcrumb>li+li:before{
+        content: "/\00a0";
+    }
+    .product-list li{
+        display:inline;
+        float:left;
+        width:500px;
+        margin:3px;
+        padding:10px;
+    }
+    .product-list li:hover{
+        box-shadow:0px 0px 1px 2px rgba(0,0,0,0.15);
+        border-radius:3px;
+    }
+    table a, .table a{
+        text-decoration:none;
+    }
+    .basket{
+        background-color:#fa6956;
+        color:#fff;
+        padding:7px 10px;
+        margin-left:20px;
+        font-size:12px;
+    }
+    .basket-list{
+        position:absolute;
+        z-index:99999999;
+        font-size:13px;
+        width:310px;
+        margin-left:-204px;
+        margin-top:7px;
+        padding:10px;
+        background-color:#333;
+        color:#fff;
+    }
+    .basket-items{
+        padding:4px;
+        margin-top:10px;
+        background-color:#444;
+    }
+    .basket-items li{
+        
+    }
+    .basket-items .media-heading{
+        font-size:12px; color:#fff;
+        font-weight:bold;
+    }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<style>
+		<group title="Задний фон">
+			<item name="b_image" title="Файл" type="file" default=""/>
+			<item name="b_color" title="Цвет заднего фона" type="color" default="#ffffff"/>
+			<item name="b_repeat" title="Повторение" type="select" default="repeat">
+				<option value="repeat">Повторять по XY</option>
+				<option value="no-repeat">Не повторять</option>
+				<option value="repeat-x">Только по горизонтале</option>
+				<option value="repeat-y">Только по вертикале</option>
+			</item>
+		</group>
+		<group title="Общие настройки">
+			<item name="t_main_color" title="Основной цвет" type="color" default="#ff00c4"/>
+			<item name="t_href_color" title="Цвет ссылок" type="color" default="#8400ff"/>
+		</group>
+	</style>
+</manifest>
